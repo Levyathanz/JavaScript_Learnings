@@ -10,10 +10,22 @@
     <p>Devote Yourself to the Pursuit of Learnings.</p>
 </body>
     <script>
-        //simple function
+        //simple function. 
         function greet(){
             console.log("KHUDA HAFIZ")
         }
-        greet() //Calling the Function.
+        greet(); //Calling the Function.
+
+        //Function with Values(Arguments) passin to it.
+        function greetings(name){
+            console.log(`Hello ${name}!`)
+        }
+        let name = prompt("Enter Your Name : ");
+        greetings(name);
+
+        /* ' ; ' is not mandatory ,It help us to write code continously.
+            For Example the above last two lines of code can be written as
+            let name = prompt("Enter Your Name : ");greetings(name) */ 
+
     </script>
 </html>
