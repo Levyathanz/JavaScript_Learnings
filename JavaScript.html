@@ -15,9 +15,10 @@
     </style>
 </head>
 <body>
+    <h2 id="script"></h2>
     <p>Click me to have a Fun....</p>
     <button 
-        onclick="alert('Hey I am Here...')"> I  Am Button
+        onclick="alert('Hey I am Here...')"> Hit Me
     </button>
 </body>
 <script>
@@ -25,6 +26,14 @@
     /*And I am 
     Multiline
     Comment*/
-    console.log("Welcome Buddies!") //Output the text in browser console
+
+    // This will Replace the element using id inside the HTML page.
+    document.getElementById('script').innerHTML='I am Javascript';
+
+    //Output the text in browser console.
+    console.log("Welcome Buddies!"); 
+
+    /* alert() will display data in popup.
+       " window.alert() " we can skip 'window' Keyword.*/ 
 </script>
 </html>
