@@ -32,10 +32,15 @@
     console.log(basket.nested_basket.count)
     basket.basketfunction()    //Calling the Function inside of an object.
 
-    // Built-in JSON object to convert Javascript object to JSON.
+    // Built-in JSON method to convert Javascript object to JSON.
     const conversion=JSON.stringify(basket);    //This will always results in string.
     console.log(conversion) //JSON does not support Function so it will get removed.
     console.log(typeof conversion)
+
+    //converting JSON text to JavaScript object.
+    const JavaScript_conversion=JSON.parse(conversion);
+    console.log(JavaScript_conversion)
+    console.log(typeof JavaScript_conversion)   
     
 </script>
 </html>
