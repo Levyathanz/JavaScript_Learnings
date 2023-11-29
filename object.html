@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <h1>404!</h1>
+    <p>IT'S BETTER TO JUMP</p>
+</body>
+<script>
+    // Javascript object
+    const basket={
+        name : 'Basket',
+        capacity : 20,
+        property : true,
+        //Nested object
+        nested_basket : {
+            ratings : 4.5,
+            count : 90
+        },
+        //Function inside object
+        fun : function basketfunction(){
+            console.log('Function inside Basket')
+        }
+    };
+    console.log(typeof basket)
+    console.log(typeof console.log)
+    console.log(basket.name)    //Dot Notation
+    console.log(basket['name']) //Bracket Notation
+    console.log(basket.nested_basket.count)
+    basket.fun()    //Calling the Function inside of an object.
+</script>
+</html>
