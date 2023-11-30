@@ -27,13 +27,13 @@
     console.log(basket);
     console.log(basket2);   // The above change will also be reflected in basket2.
 
-    // Let us create a new object with same properties.
+    // Let us create a new object with same properties and check whether it matches.
     const basket3={
         name : 'Basket',
         price : 899
     }
     console.log( basket === basket3 );  // This will result in false.
     console.log( basket === basket2 );  // This will result in true cause basket2 carries reference to basket.
-    //destructing shortcut.
+
 </script>
 </html>
