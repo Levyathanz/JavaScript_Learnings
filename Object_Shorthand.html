@@ -10,20 +10,23 @@
     <p>IT'S BETTER TO JUMP</p>
 </body>
 <script>
-
+    const basket = {
+        name : 'Basket',
+        price : 999
+    }
     // Destructive shortcut.
     //const price = basket.price;
-    const {price,name} = basket2;   
+    const {price,name} = basket;   
     /*This above shortcut replace above line.
       And multiple variables from an object are declared using this Shortcut.*/
     console.log(price,name) 
     /* Using price variable and creating a object.*/
-    const basket4={
+    const basket2={
         name : basket.name,
         //price : price,
         //Above property can be written as shortcut below,
         price,
     }
-    console.log(basket4);
+    console.log(basket2);
 </script>
 </html>
