@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head><title>Rock-Paper-Scissor</title></head>
+<style>
+    button {
+        margin: 5px;
+        padding: 5px;
+        font-size: 15px;
+        box-shadow: 5px 5px 10px #000;
+        color: #fff;
+        border-radius: 5px;
+        background:rgb(172, 25, 25);
+    }
+</style>
+<body>
+    <h1>Let's Play Rock..Paper..Scissor</h1>
+    <button 
+        onclick="computercall()
+        if (computermove==='Rock'){
+            alert(`Computer move is Rock. Match Tie!`)
+        }else if(computermove==='Paper'){
+            alert(`Computer move is Paper. You Lose!`)
+        }else if(computermove==='Scissor'){
+            alert(`Computer move is Scissor. You Win!`)
+        }"
+        >Rock   
+    </button>
+    <button 
+        onclick="computercall()
+        if (computermove==='Rock'){
+            alert(`Computer move is Rock. You Win!`)
+        }else if(computermove==='Paper'){
+            alert(`Computer move is Paper. Match Tie! `)
+        }else if(computermove==='Scissor'){
+            alert(`Computer move is Scissor. You Lose!`)
+        }"
+        >Paper  
+    </button>
+    <button 
+        onclick="computercall()
+        if (computermove==='Rock'){
+            alert(`Computer move is Rock. You Lose!`)
+        }else if(computermove==='Paper'){
+            alert(`Computer move is Paper. You Win!`)
+        }else if(computermove==='Scissor'){
+            alert(`Computer move is Scissor. Match Tie!`)
+        }"
+        >Scissor
+    </button> 
+</body>
+<script>
+
+    let computermove='';
+    // Computer Move Function.
+    function computercall(){
+        let num=Math.random()
+        //console.log(num)
+        if(num>=0 && num<1/3){
+            computermove="Rock";
+        }else if(num>=1/3 && num<2/3){
+            computermove="Paper";
+        }else if(num>=2/3 && num<1){
+            computermove="Scissor";
+        }
+        return computermove
+    }
+</script> 
+</html>
