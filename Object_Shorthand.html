@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+<body>
+    <h1>404!</h1>
+    <p>IT'S BETTER TO JUMP</p>
+</body>
+<script>
+
+    // Destructive shortcut.
+    //const price = basket.price;
+    const {price,name} = basket2;   
+    /*This above shortcut replace above line.
+      And multiple variables from an object are declared using this Shortcut.*/
+    console.log(price,name) 
+    /* Using price variable and creating a object.*/
+    const basket4={
+        name : basket.name,
+        //price : price,
+        //Above property can be written as shortcut below,
+        price,
+    }
+    console.log(basket4);
+</script>
+</html>
