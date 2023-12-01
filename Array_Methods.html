@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>404!</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+</body>
+<script>
+
+    // Array Methods.
+    const Linux_Distro = ['Debian','Ubuntu','Linux Mint','Red Hat Enterprise Linux','CentOS stream','Fedora'];
+    console.log(Linux_Distro.length);   // Return Number of items in the Array.
+
+    console.log(Linux_Distro.toString());   //Convert array elements to comma seperated string.
+
+    console.log(Linux_Distro.join('/'));    // similar to toString() method but we can specify the seperator.
+
+    console.log(Linux_Distro.pop());    // Remove and return the Last element.
+    console.log(Linux_Distro);
+
+    Linux_Distro.push('Arch Linux');    // Add the Given Element to the Array End.
+    console.log(Linux_Distro);
+
+    console.log(Linux_Distro.shift());  //Shifting is equivalent to popping, but working on the first element.
+    console.log(Linux_Distro);
+
+    Linux_Distro.unshift('Debian');    //This method adds a new element to the array beginning.
+    console.log(Linux_Distro);
+
+
+
+</script>
+</html>
