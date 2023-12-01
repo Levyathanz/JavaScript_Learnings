@@ -33,6 +33,14 @@
     console.log(fruits[fruits.length - 1 ]);
     console.log(programming_Languages[programming_Languages.length - 1 ]);
 
+    // Adding Elements in an Array.
+    programming_Languages[7] = '.NET';
+    fruits[fruits.length] = 100 ;
+    console.log(programming_Languages);
+    console.log(fruits);
+    //Adding elements with high indexes can create undefined "holes" in an array.
+    fruits[10] = 1000; 
+    console.log(fruits[9]);
 
 </script>
 </html>
