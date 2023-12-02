@@ -4,53 +4,78 @@
 <style>
     button {
         margin: 5px;
-        padding: 5px;
+        padding: 10px 20px;
         font-size: 15px;
         box-shadow: 5px 5px 10px #000;
         color: #fff;
-        border-radius: 5px;
+        border-radius: 10px;
         background:rgb(172, 25, 25);
     }
 </style>
 <body>
-    <h1>Let's Play Rock..Paper..Scissor</h1>
+    <h1>Get Ready for the play</h1>
     <button 
-        onclick="computercall()
-        if (computermove==='Rock'){
-            alert(`Computer move is Rock. Match Tie!`)
-        }else if(computermove==='Paper'){
-            alert(`Computer move is Paper. You Lose!`)
-        }else if(computermove==='Scissor'){
-            alert(`Computer move is Scissor. You Win!`)
-        }"
+        onclick="playercall('Rock')"
         >Rock   
     </button>
     <button 
-        onclick="computercall()
-        if (computermove==='Rock'){
-            alert(`Computer move is Rock. You Win!`)
-        }else if(computermove==='Paper'){
-            alert(`Computer move is Paper. Match Tie! `)
-        }else if(computermove==='Scissor'){
-            alert(`Computer move is Scissor. You Lose!`)
-        }"
+        onclick="playercall('Paper')"
         >Paper  
     </button>
     <button 
-        onclick="computercall()
-        if (computermove==='Rock'){
-            alert(`Computer move is Rock. You Lose!`)
-        }else if(computermove==='Paper'){
-            alert(`Computer move is Paper. You Win!`)
-        }else if(computermove==='Scissor'){
-            alert(`Computer move is Scissor. Match Tie!`)
-        }"
+        onclick="playercall('Scissor')"
         >Scissor
     </button> 
 </body>
 <script>
 
-    let computermove='';
+   // Player Move Function.
+   score = {
+        Wins : 0,
+        Loses : 0,
+        Ties : 0
+    }
+    function playercall(playermove){
+        const computermove = computercall();
+        let result='';
+
+        if (playermove === "Rock"){
+            if (computermove==='Rock'){
+                result='Tie';
+            }else if(computermove==='Paper'){
+                result='Lose';
+            }else if(computermove==='Scissor'){
+                result='Win';
+            }
+        }else if (playermove === "Paper"){
+            if (computermove==='Rock'){
+                result='Win';
+            }else if(computermove==='Paper'){
+                result='Tie';
+            }else if(computermove==='Scissor'){
+                result='Lose';
+            }
+        }else if (playermove === "Scissor"){
+            if (computermove==='Rock'){
+                result='Lose';
+            }else if(computermove==='Paper'){
+                result='Win';
+            }else if(computermove==='Scissor'){
+                result='Tie';
+            }
+        }
+        if (result === 'Win'){
+            score.Wins +=1;
+            alert(`Computer move is ${computermove}.You won!\nWins  : ${score.Wins}\nLoses : ${score.Loses}\nTies   : ${score.Ties}`)
+        }else if (result === 'Lose'){
+            score.Loses +=1;
+            alert(`Computer move is ${computermove}.You Lose\nWins  : ${score.Wins}\nLoses : ${score.Loses}\nTies   : ${score.Ties}`)
+        }else if (result === 'Tie'){
+            score.Ties +=1;
+            alert(`Computer move is ${computermove}.Match Tie!\nWins  : ${score.Wins}\nLoses : ${score.Loses}\nTies   : ${score.Ties}`)
+        }
+    }
+
     // Computer Move Function.
     function computercall(){
         let num=Math.random();
