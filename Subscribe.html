@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube</title>
+</head>
+<style>
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        box-shadow: 2px 2px 5px rgb(54, 52, 52);
+        color: #fff;
+        border-radius: 25px;
+        background: rgb(165, 8, 8);
+        cursor: grab;
+    }
+</style>
+
+<body>
+    <h1>Youtube</h1>
+    <p>Click to Subscribe</p>
+    <button onclick="subscribe()">Subscribe</button>
+</body>
+<script>
+
+    // Simple Exercise for JavaScript DOM.
+
+    function subscribe() {
+        let button = document.querySelector('button');  
+        if (button.innerText === 'Subscribe') {
+            button.innerText = 'Suprised';
+        } else if (button.innerText === 'Suprised') {
+            button.innerText = 'Subscribe';
+        }
+    }
+
+</script>
+
+</html>
