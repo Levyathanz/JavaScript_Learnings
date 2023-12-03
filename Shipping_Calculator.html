@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+</head>
+
+<body>
+    <h1>Shipping Calculator</h1>
+    <p>Free Shipping above $40
+    <p>Standard Shipping Charge $10</p>
+    <input class="cost" placeholder="Enter the Cost" onkeydown="
+    //console.log(event);
+    //console.log(event.key);
+        cost(event)">
+    <button onclick="Calculate()">Calculate</button>
+    <p class="total">Total : </p>
+</body>
+<script>
+    // Exercise-2 --> JavaScript DOM.
+
+    // Function to handle keyboard event.
+    function cost(event) {
+        if (event.key === 'Enter') {
+            Calculate();
+        }
+    }
+
+    // Function to Calculate shipping charges.
+    function Calculate() {
+        const cost = document.querySelector('.cost');
+        let shipping_cost = Number(cost.value);
+        if (shipping_cost < 40) {
+            shipping_cost = shipping_cost + 10;
+        }
+
+        document.querySelector('.total').innerHTML = `Total : $ ${shipping_cost}`;
+    }
+</script>
+
+</html>
