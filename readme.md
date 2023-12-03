@@ -1,2 +1,2 @@
-###JavaScript Learnings.
+# JavaScript Learnings.
 
