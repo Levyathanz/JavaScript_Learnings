@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <h1>404!</h1>
     <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
@@ -12,7 +14,7 @@
 <script>
 
     // Array Methods.
-    const Linux_Distro = ['Debian','Ubuntu','Linux Mint','Red Hat Enterprise Linux','CentOS stream','Fedora'];
+    const Linux_Distro = ['Debian', 'Ubuntu', 'Linux Mint', 'Red Hat Enterprise Linux', 'CentOS stream', 'Fedora'];
     console.log(Linux_Distro.length);   // Return Number of items in the Array.
 
     console.log(Linux_Distro.toString());   //Convert array elements to comma seperated string.
@@ -31,7 +33,23 @@
     Linux_Distro.unshift('Debian');    //This method adds a new element to the array beginning.
     console.log(Linux_Distro);
 
+    const random = [
+        10,
+        'Peter',
+        true,
+        {
+            name: 'Spiderman'
+        },
+        [1, 2, 3]
+    ]
+    console.log(random[3].name);
+    console.log(random[4][1]);
 
-
+    const split1 = random.splice(0, 3);     // This method slice and return new array from the existing array. 
+    // 1st argument represent its index position and 2nd argument represent the number of items to be sliced.
+    console.log(split1);
+    const split2 = random.splice(-2, 1);    // Negative value indicate position in reverse order starting from -1.
+    console.log(split2);
 </script>
+
 </html>
