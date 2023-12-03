@@ -13,9 +13,13 @@
         border: none;
         box-shadow: 2px 2px 5px rgb(54, 52, 52);
         color: #fff;
-        border-radius: 25px;
+        border-radius: 50px;
         background: rgb(165, 8, 8);
-        cursor: grab;
+        cursor: pointer;
+    }
+    .button-suprised {
+        color: #fff;
+        background: #000;
     }
 </style>
 
@@ -29,11 +33,13 @@
     // Simple Exercise for JavaScript DOM.
 
     function subscribe() {
-        let button = document.querySelector('button');  
+        let button = document.querySelector('button');
         if (button.innerText === 'Subscribe') {
             button.innerText = 'Suprised';
+            button.classList.add('button-suprised');
         } else if (button.innerText === 'Suprised') {
             button.innerText = 'Subscribe';
+            button.classList.remove('button-suprised');
         }
     }
 
