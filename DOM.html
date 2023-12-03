@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <p class="select">Hello!</p>
+    <p class="select">This is Learnings of JAVASCRIPT DOM</p>
+    <p class="select">DOM - Document Object Model</p>
+    <button  id="hit">Click</button>
+    <button class="hit" id="hit1">Click</button>
+    <button class="hit1" id="hit2">Click</button>
+    <button class="hit2">Click</button>
+    <button class="hit3">Click</button>
+</body>
+<script>
+
+    // For Personal Understanding Purpose.
+
+    //Document Object Model (DOM) - Provide control over HTML elements.
+
+      //document.body= 'Get Ready Folks!';
+      document.title = 'CHANGED';
+      document.getElementById('hit1').innerHTML = 'Mock' // Change value inside the button.
+      document.getElementById('hit2').outerHTML = 'Mock' // Change the button as String.
+      console.log(document.getElementsByClassName("hit2")[0].innerHTML);
+      console.log(document.getElementsByTagName('p')[1].innerHTML);
+      // Both getElementsByTagName() getElementsByClassName() return HTML collection.
+      // So we need to access it by index.
+
+      // QUERYSELECTOR().\
+
+      console.log(document.querySelector('button'));    // This will take 1st button element.
+      console.log(document.querySelectorAll('p.select')[0].innerText);
+      //queryselctorAll() return all the elements in NodeList. So we need to access it by index.
+      const button = document.querySelector('button');
+      console.log(button); // queryselector gives control over the element.
+      const buttonbyclass = document.querySelector('.hit3'); // Controlling by classname.
+      console.log(buttonbyclass)
+      // document.querySelector('button').innerHTML= "Punch";
+      // document.querySelector('.Hit').innerHTML = "C'mon";
+      buttonbyclass.innerHTML = "C'mon";
+      button.innerHTML = "Punch";
+      
+      
+</script>
+</html>
