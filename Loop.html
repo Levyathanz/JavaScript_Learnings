@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loops</title>
+</head>
+
+<body>
+    <h1>404!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+    <button onclick="alert(`It's ${day} today.`);">click
+    </button>
+</body>
+<script>
+
+    // Switch Case.
+    switch (new Date().getDay()) {
+        case 0:
+            day = "Sunday";
+            break;
+        case 1:
+            day = "Monday";
+            break;
+        case 2:
+            day = "Tuesday";
+            break;
+        case 3:
+            day = "Wednesday";
+            break;
+        case 4:
+            day = "Thursday";
+            break;
+        case 5:
+            day = "Friday";
+            break;
+        case 6:
+            day = "Saturday";
+        default:    // If no case match, default runs.
+            day = 'Bad day'
+    }
+
+    // For loop.
+    const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+    /*
+    for (let i = 0; i < days.length; i++) {
+        console.log(days[i]);
+    } //---1
+    for (let i = 0,
+        len = days.length; i < len; i++) {
+        console.log(days[i]);
+    } //---2
+    */
+    i = 0;
+    len = days.length;
+    for (; i < len; i++) {
+        console.log(days[i]);
+    }
+
+
+
+
+</script>
+
+</html>
