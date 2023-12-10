@@ -8,7 +8,7 @@
 </head>
 <style>
     * {
-        font-family: Arial, Helvetica, sans-serif;
+        font-family:'Times New Roman', Times, serif;
         font-weight: bold;
     }
 
@@ -53,6 +53,7 @@
         let shipping_cost = Number(cost.value);
         if (shipping_cost < 40 && shipping_cost > 0) {
             shipping_cost = shipping_cost + 10;
+            shipping_cost = shipping_cost.toFixed(2);
         }
 
         document.querySelector('.total').innerHTML = `Total : $ ${shipping_cost}`;
