@@ -36,13 +36,28 @@
     for (let x in car) {
         console.log(car[x])
     }
-    //It can also iterate over Array but if the index order is important do not use  it. It might not guarantee the order of iteration.
+    //It can also iterate over Array but if the index order is important do not use  it. 
+    //It might not guarantee the order of iteration.
     const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, "Apple", "Ball", "cat"];
     for (let x in numbers) {
         console.log(numbers[x])
     }
-    //It is better practice to use a for loop, a for of loop, or Array.forEach()  for array when the order is important.
+    //It is better practice to use a for loop, a for of loop, or Array.forEach() for array when the order is important.
 
+    //Array.forEach(). This calls a function once for every array element.
+    numbers.forEach(array_function);
+    function array_function(v, i, a) {
+        console.log(v, i)
+    }// Here v is value, i is index and a is whole array passing to the function.
+
+    // For of loop. Loops through the values of an iterable object such as Arrays, Strings, Maps, NodeLists, and more.
+    const string = 'Hello';
+    for (let x of string) {
+        console.log(x);
+    }
+    for (let x of numbers) {
+        console.log(x);
+    }
 
 </script>
 
