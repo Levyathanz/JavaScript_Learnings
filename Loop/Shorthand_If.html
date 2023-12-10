@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Short_Hand</title>
+</head>
+<body>
+    <h1>404!</h1>
+    <p>Life Gives Hardest Battle to the Strongest Soldier.</p>
+</body>
+<script>
+    //alert('Go to Console');
+
+     //Ternary operator
+    const age = 18; 
+    //shorthand method of ifelse statement.
+    //age >=18 ? console.log(`You can Drive!`) : console.log(`You are ${age} years old, so You can't Drive`);
+    const result = age >=18 ? `You can Drive!` :`You are ${age} years old, so You can't Drive`;
+    console.log(result);
+    
+     //Guard Operator
+    //0<7 && console.log('First statement is True, so I am running');
+    //Texts are considered as true values.
+    //Both statements should be True.otherwise return false.
+    const message = 0<1 && 1<10;
+    console.log(message)
+
+    //Default Operator
+    //1<0 && console.log('First statement is False, so I am running');
+    //Texts are considered as true values.
+    //Any one of two statements should be true.If both statements are false return false.
+    const note = 0>1 || 1<10;
+    console.log(note)
+
+</script>
+</html>
