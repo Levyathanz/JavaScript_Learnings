@@ -1,10 +1,10 @@
-// Player Move Function.
+// Retrieving the stored scores.
 let score = JSON.parse(localStorage.getItem('score')) || {
     Wins: 0,
     Loses: 0,
     Ties: 0
 };
-// Retrieving the stored scores.
+// Player Move Function.
 function playercall(playermove) {
     const computermove = computercall();
     let result = '';
