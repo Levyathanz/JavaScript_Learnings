@@ -45,9 +45,7 @@ function playercall(playermove) {
 
     localStorage.setItem('score', JSON.stringify(score));   // Storing scores in the localstorage so that the score does not removed when we refresh the page.
 
-    document.querySelector('.moves').innerHTML = `Computer move is ${computermove} and you choose ${playermove}.`;
-    document.querySelector('.result').innerHTML = `Result : ${result}`;
-    document.querySelector('.score').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
+    document.querySelector('.result').innerText = `Computer move is ${computermove} and you choose ${playermove}.\nResult : ${result}\nWins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
 
 }
 
@@ -73,5 +71,5 @@ function reset() {
         Ties: 0
     }
     localStorage.removeItem('score')
-    document.querySelector('.score').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
+    document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
 }
