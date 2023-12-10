@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Game</title>
+</head>
+<style>
+    button {
+        margin: 8px;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        box-shadow: 2px 2px 5px rgb(54, 52, 52);
+        color: #fff;
+        border-radius: 25px;
+        background: #0d4614;
+        cursor: pointer;
+    }
+
+    p {
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <h1>Get Ready For the Play</h1>
+    <button onclick="playercall('Rock')">Rock
+    </button>
+    <button onclick="playercall('Paper')">Paper
+    </button>
+    <button onclick="playercall('Scissor')">Scissor
+    </button>
+    <p class="moves"></p>
+    <p class="result"></p>
+    <p class="score"></p>
+    <button onclick="reset()">Reset score
+    </button>
+</body>
+<script src="script.js"></script>
+
+</html>
