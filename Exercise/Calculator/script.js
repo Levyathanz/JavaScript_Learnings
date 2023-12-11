@@ -8,7 +8,7 @@ function updateCalculation(value) {
     display();
 }
 
-// Function to display in calculation in input box.
+// Function to display the calculation in input box.
 function display() {
     const monitor = document.querySelector('.monitor')
     monitor.value = `${calculation}`
