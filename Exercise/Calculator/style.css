@@ -1,0 +1,50 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+h1 {
+    color: darkorange;
+    font-size: 35px;
+    text-shadow: 5px 5px 30px;
+}
+
+button {
+    width: 50px;
+    height: 50px;
+    font-size: 25px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 60px;
+}
+
+input {
+    border: none;
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.black-button {
+    background-color: rgba(0, 0, 0, 0.911);
+    color: darkorange;
+}
+
+.orange-button {
+    background-color: darkorange;
+    color: rgb(0, 0, 0);
+}
+
+.clear-button {
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.calculator {
+    position: fixed;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
