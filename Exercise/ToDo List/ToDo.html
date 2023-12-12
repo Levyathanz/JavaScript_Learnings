@@ -12,12 +12,11 @@
 </head>
 
 <body>
-    <h1>To - Do List</h1>
-    <input class="js-todo" placeholder="Task to Do" onkeydown="
-    if (event.key === 'Enter') {
-        addlist();
-    }" />
+    <h1>TO - DO LIST</h1>
+    <input class="js-todo" placeholder="Task to Do" />
+    <input class="js-duedate" type="date" />
     <button onclick="addlist()">Add</button>
+    <p class="js-error" style="color: red;"></p>
     <div class="js-list"></div>
 </body>
 <script src="script.js"></script>
