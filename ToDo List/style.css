@@ -1,0 +1,64 @@
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    ;
+    margin: 0;
+    color: #fff;
+    background-color: darkslategrey;
+}
+
+header {
+    text-shadow: 5px 5px 10px black;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.js-grid,
+.js-list {
+    font-size: 17px;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    column-gap: 10%;
+    row-gap: 10px;
+    padding: 10px;
+    text-shadow: 5px 5px 10px black;
+}
+
+.js-error {
+    color: red;
+    text-align: center;
+    text-shadow: 2px 2px 10px black;
+}
+
+.js-todo,
+.js-duedate,
+.js-btn,
+.js-red-btn {
+    border: none;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px black;
+}
+
+.js-btn {
+    color: #fff;
+    background-color: green;
+}
+
+.js-red-btn {
+    color: #fff;
+    background-color: rgb(163, 6, 6);
+}
+
+label {
+    text-align: center;
+    padding: 10px;
+    text-decoration: underline;
+}
+
+.container {
+    padding: 20px;
+}

@@ -1,8 +1,5 @@
 // To Do List in Dictionaries of Array. 
-const todoList = [{
-    name: 'Make Dinner',
-    duedate: '2023-12-11'
-}];
+const todoList = JSON.parse(localStorage.getItem('TodoList')) || [];
 Listupdate()
 
 //Function that display the to Do List.
@@ -17,11 +14,12 @@ function Listupdate() {
         // Use destructive shorthand.
         const { name, duedate } = todoobject;
         const list = `
-        <p>${name}  ${duedate}
-        <button onclick=" 
+        <div>${name}</div>
+        <div>${duedate}</div>
+        <button class="js-red-btn" onclick=" 
         todoList.splice(${i},1)
-        Listupdate()">Delete</button>
-        </p>`;
+        localStorage.removeItem('TodoList');
+        Listupdate()">Delete</button>`;
         List += list;
     }
     console.log(List)
@@ -40,9 +38,10 @@ function addlist() {
             name: inputtask.value,
             duedate: inputdate.value
         });
+        inputtask.value = '';
+        inputdate.value = '';
     }
-    inputtask.value = '';
-    inputdate.value = '';
+    localStorage.setItem('TodoList', JSON.stringify(todoList));
     console.log(todoList);
     Listupdate();
 }
