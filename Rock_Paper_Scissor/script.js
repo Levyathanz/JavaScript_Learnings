@@ -45,7 +45,7 @@ function playercall(playermove) {
 
     localStorage.setItem('score', JSON.stringify(score));   // Storing scores in the localstorage so that the score does not removed when we refresh the page.
 
-    document.querySelector('.result').innerText = `Computer move is ${computermove} and you choose ${playermove}.\nResult : ${result}\nWins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
+    document.querySelector('.result').innerHTML = `<p>Computer move is <img class="js-result-img" src="Images/${computermove}.png" /> and you choose <img class="js-result-img" src="Images/${playermove}.png" /></p><p>Result : ${result}<audio src="Images/Music/${result}.mp3" autoplay></audio></p>Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
 
 }
 
