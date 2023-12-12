@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // Break
+    // For Loop.
+    for (let i = 1; i < 10; i++) {
+        if (i === 3) {
+            break;  // This will break the loop once i satisfies the specified condition.
+        }
+        console.log(i);
+    }
+    // While Loop.
+    j = 1;
+    while (j < 10) {
+        j++
+        if (j === 3) {
+            break;
+        }
+        console.log(j);
+    }
+
+    // Continue.
+    // For Loop.
+    for (let k = 1; k <= 10; k++) {
+        if (k % 3 === 0) {
+            continue;//This will skip the element that satisfy specified condition.
+        }
+        console.log(k);
+    }
+
+    // While Loop.
+    let m = 1;
+    while (m <= 10) {
+        if (m % 3 === 0) {
+            m++;    // We Have to use incremental in here while using Continue in the while loop . This will avoid infinite loop problem.
+            continue;
+        }
+        console.log(m);
+        m++; // We also have to declare increment here too.
+    }
+</script>
+
+</html>
