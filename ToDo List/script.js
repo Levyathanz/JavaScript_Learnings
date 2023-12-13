@@ -1,29 +1,31 @@
+// Adding EventListener.
+document.querySelector('.js-btn').addEventListener('click', () => addlist());
+
 // To Do List in Dictionaries of Array. 
 const todoList = JSON.parse(localStorage.getItem('TodoList')) || [];
-Listupdate()
+Listupdate();
 
 //Function that display the to Do List.
 function Listupdate() {
     let List = '';
-    for (let i = 0; i < todoList.length; i++) {
-        const todoobject = todoList[i];
-        /*
-        const name = todoobject.name;
-        const duedate = todoobject.duedate;
-        */
-        // Use destructive shorthand.
+    todoList.forEach((todoobject) => {
         const { name, duedate } = todoobject;
         const list = `
         <div>${name}</div>
         <div>${duedate}</div>
-        <button class="js-red-btn" onclick=" 
-        todoList.splice(${i},1)
-        localStorage.removeItem('TodoList');
-        Listupdate()">Delete</button>`;
+        <button class="js-red-btn js-delete-btn">Delete</button>`;
         List += list;
-    }
-    console.log(List)
+        //console.log(List)
+    });
     document.querySelector('.js-list').innerHTML = List;
+
+    document.querySelectorAll('.js-delete-btn').forEach((deleteButton, index) => {
+        deleteButton.addEventListener('click', () => {
+            todoList.splice(index, 1);
+            localStorage.removeItem('TodoList');
+            Listupdate()
+        })
+    })
 }
 
 // Function that add to Do List into the Array.
@@ -42,6 +44,6 @@ function addlist() {
         inputdate.value = '';
     }
     localStorage.setItem('TodoList', JSON.stringify(todoList));
-    console.log(todoList);
+    // console.log(todoList);
     Listupdate();
 }
