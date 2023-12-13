@@ -46,9 +46,17 @@
 
     //Array.forEach(). This calls a function once for every array element.
     numbers.forEach(array_function);
-    function array_function(v, i, a) {
-        console.log(v, i)
+    function array_function(value, index, array) {
+        console.log(value, index)
     }// Here v is value, i is index and a is whole array passing to the function.
+    [1, 2, 3, 4, 5].forEach(function (value) {
+        if (value === 3) {
+            return;
+            // forEach function don't have Continue Function.  
+            // The return function works as continue and skip specified condition value.
+        }
+        console.log(value);
+    });
 
     // For of loop. Loops through the values of an iterable object such as Arrays, Strings, Maps, NodeLists, and more.
     const string = 'Hello';

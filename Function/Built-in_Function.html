@@ -8,7 +8,9 @@
 </head>
 
 <body>
-
+    <button class="js-btn">
+        click
+    </button>
 </body>
 <script>
 
@@ -27,6 +29,18 @@
         //console.log("Interval")
     }, 3000);
     // This will continue to display Interval every 3 seconds.
+
+    // addEventListener.
+    const button = document.querySelector('.js-btn');
+    const display = () => {
+        console.log('Button Clicked')
+    }
+    button.addEventListener('click', display)
+    button.addEventListener('click', () => {
+        console.log('click')
+    })
+    // button.removeEventListener('click', display)
+    // The above line will leave the specified function without running.
 </script>
 
 </html>
