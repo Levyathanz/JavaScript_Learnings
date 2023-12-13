@@ -12,23 +12,29 @@
 </head>
 
 <body>
-    <div class="container">
-        <header>
-            <h1>Get Ready For the Play</h1>
-            <h3>ROCK PAPER SCISSOR</h3>
-        </header>
+    <header>
+        <h1>Get Ready For the Play</h1>
+        <h3>ROCK PAPER SCISSOR</h3>
+    </header>
+    <main>
         <div>
-            <button onclick="playercall('Rock')"><img class="js-image-card" src="Images/Rock.png" />Rock
+            <button class="js-rock-btn"><img class="js-image-card" src="Images/Rock.png" />Rock
             </button>
-            <button onclick="playercall('Paper')"><img class="js-image-card" src="Images/Paper.png" />Paper
+            <button class="js-paper-btn "><img class="js-image-card" src="Images/Paper.png" />Paper
             </button>
-            <button onclick="playercall('Scissor')"><img class="js-image-card" src="Images/Scissor.png" />Scissor
-            </button>
-            <p class="result"></p>
-            <button class="btn-reset" onclick="reset()">Reset score
+            <button class="js-scissor-btn"><img class="js-image-card" src="Images/Scissor.png" />Scissor
             </button>
         </div>
-    </div>
+        <div>
+            <p class="result"></p>
+        </div>
+        <div>
+            <button class="btn-reset">Reset score
+            </button>
+            <button class="btn-autoplay">Autoplay
+            </button>
+        </div>
+    </main>
 </body>
 <script src="script.js"></script>
 

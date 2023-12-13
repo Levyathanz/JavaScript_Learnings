@@ -1,3 +1,21 @@
+// Adding eventListener.
+document.querySelector('.js-rock-btn').addEventListener('click', () => playercall('Rock'));
+document.querySelector('.js-paper-btn').addEventListener('click', () => playercall('Paper'))
+document.querySelector('.js-scissor-btn').addEventListener('click', () => playercall('Scissor'))
+document.querySelector('.btn-reset').addEventListener('click', () => reset())
+document.querySelector('.btn-autoplay').addEventListener('click', () => autoplay())
+
+// Key Event Listener
+document.body.addEventListener('keydown', (event) => {
+    if (event.key === 'r') {
+        playercall('Rock');
+    } else if (event.key === 'p') {
+        playercall('Paper');
+    } else if (event.key === 's') {
+        playercall('Scissor');
+    }
+})
+
 // Retrieving the stored scores.
 let score = JSON.parse(localStorage.getItem('score')) || {
     Wins: 0,
@@ -45,8 +63,33 @@ function playercall(playermove) {
 
     localStorage.setItem('score', JSON.stringify(score));   // Storing scores in the localstorage so that the score does not removed when we refresh the page.
 
-    document.querySelector('.result').innerHTML = `<p>Computer move is <img class="js-result-img" src="Images/${computermove}.png" /> and you choose <img class="js-result-img" src="Images/${playermove}.png" /></p><p>Result : ${result}<audio src="Images/Music/${result}.mp3" autoplay></audio></p>Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
+    document.querySelector('.result').innerHTML = `<p>
+    You choose 
+    <img class="js-result-img" src="Images/${playermove}.png" />
+    Computer move is 
+    <img class="js-result-img" src="Images/${computermove}.png" />
+    </p> 
+    <p>
+    Result : ${result}
+    <audio src="Images/Music/${result}.mp3" autoplay></audio>
+    </p>
+    Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
 
+}
+// Auto play Function.
+let isautoplaying = false;
+let intervalid;
+function autoplay() {
+    if (!isautoplaying) {
+        intervalid = setInterval(() => {
+            const playermove = computercall();
+            playercall(playermove)
+        }, 2000);
+        isautoplaying = true;
+    } else {
+        clearInterval(intervalid);
+        isautoplaying = false;
+    }
 }
 
 // Computer Move Function.
