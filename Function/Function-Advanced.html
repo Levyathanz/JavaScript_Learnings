@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    welcome();
+    // Declaring a Function.
+    function welcome() {
+        console.log("Welcome!")
+    }
+    // Function Advanced.
+    // Function can also be saved in a variable.
+    const greet = function greeting() {
+        console.log('Hello Everyone!');
+    }
+    console.log(greet);
+    console.log(typeof greet);
+    // To call this function we have to use variable name and not function name.
+    greet();
+
+    // As we need only variable name for this function we do not need function name.
+    //We can rewrite the above function as,
+    const greeting = function () {
+        // This name less Function is Anonymous Function.
+        console.log("Hello Buddies!")
+    }
+    greeting();
+
+    /* Actual Function Structure is
+    var greeting = function(){
+        console.log("Hello Everyone!");
+    }
+    The method we are using is shortcut of above method.
+    pros of using the shortcut method is hoisting( calling function before declaring).
+    Example we have called greeting function on the 1st line of this script.
+    This will not work if we assign the function to a variable.
+    */
+
+    // we can also pass a function as parameter to another function since it is also works like a variable.
+    function parameter(x) {
+        x();
+    }
+    parameter(function () {
+        // This is callback function.
+        console.log("I am a parameter");
+    })
+
+    // Assigning Variable to the function and passing as a parameter.
+    function parameter2(x) {
+        x();
+    }
+    const param = function () {
+        console.log("I am a parameter2");
+    }
+    parameter2(param);
+
+
+</script>
+
+</html>
