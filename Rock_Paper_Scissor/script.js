@@ -13,6 +13,10 @@ document.body.addEventListener('keydown', (event) => {
         playercall('Paper');
     } else if (event.key === 's') {
         playercall('Scissor');
+    } else if (event.key === 'a') {
+        autoplay();
+    } else if (event.key === 'Backspace') {
+        reset();
     }
 })
 
@@ -86,9 +90,11 @@ function autoplay() {
             playercall(playermove)
         }, 2000);
         isautoplaying = true;
+        document.querySelector('.btn-autoplay').innerHTML = 'Stop playing';
     } else {
         clearInterval(intervalid);
         isautoplaying = false;
+        document.querySelector('.btn-autoplay').innerHTML = 'Autoplay';
     }
 }
 
@@ -108,11 +114,23 @@ function computercall() {
 
 // Reset Function.
 function reset() {
-    score = {
-        Wins: 0,
-        Loses: 0,
-        Ties: 0
+
+    document.querySelector('.result').innerHTML = `<p>Are you sure you want to reset the score? <button class='js-rst-yes js-rst-alert'>Yes</button><button class='js-rst-no js-rst-alert'>No</button></p>`
+
+    document.querySelector('.js-rst-yes').addEventListener('click', () => {
+        score = {
+            Wins: 0,
+            Loses: 0,
+            Ties: 0
+        }
+        localStorage.removeItem('score')
+        document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
+
+        document.querySelector('.js-reset-alert').innerHTML = ''
+
+    })
+    document.querySelector('.js-rst-no').addEventListener('click', () => {
+        document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
     }
-    localStorage.removeItem('score')
-    document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
+    )
 }

@@ -53,6 +53,22 @@ p {
     cursor: pointer;
 }
 
+.js-rst-alert {
+    font-size: 12px;
+    margin: 0;
+    border: none;
+    padding: 7px 10px;
+    margin-left: 5px;
+}
+
+.js-rst-yes {
+    background-color: red;
+}
+
+.js-rst-no {
+    background-color: darkgreen;
+}
+
 main {
     display: flex;
     flex-direction: column;
