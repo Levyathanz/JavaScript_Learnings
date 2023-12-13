@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>404!</h1>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+</body>
+<script>
+
+    // Array Methods.
+    // Filter().
+    const numbers = [1, 2, -3, 4, -5, 6];
+    /*
+    const filter = numbers.filter((values,index) => {
+        if (values >= 0) {
+            return true
+        } else {
+            return false
+        }
+    });
+    */
+    // Filter method filter and returns new array for the specified condition from the given array.
+    const filter = numbers.filter(values => values >= 0);   // Oneline Arrow Function.
+    console.log(filter);
+
+    // map().
+    // Map method transform returns new array based on the condition applied.
+    /*
+    const map = numbers.map((values, index) => {
+        return values + 10;
+    });
+    */
+    const map = numbers.map(values => values + 10);
+    console.log(map);
+    console.log(numbers);
+
+</script>
+
+</html>
