@@ -1,8 +1,6 @@
 const clock = document.querySelector('.clock');
 
-setInterval(() => {
-    getTime();
-}, 1000);
+clock.addEventListener("load", getTime)
 
 function getTime() {
     let time = new Date();
@@ -37,3 +35,5 @@ function getTime() {
         AM.add('js-midday-light');
     }
 }
+
+setInterval(getTime, 1000);
