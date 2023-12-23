@@ -15,16 +15,25 @@ header {
 }
 
 .js-grid,
-.js-list {
+.js-list,
+.js-title {
     font-size: 17px;
     align-items: center;
     justify-content: center;
+    text-align: center;
     display: grid;
-    grid-template-columns: 200px 150px 100px;
+    grid-template-columns: 70px 200px 150px 100px;
     column-gap: 10%;
     row-gap: 10px;
     padding: 10px;
     text-shadow: 5px 5px 10px black;
+}
+
+
+.js-title {
+    display: grid;
+    grid-template-columns: 200px 150px 100px;
+    padding-bottom: 20px;
 }
 
 .js-error {
@@ -36,11 +45,17 @@ header {
 .js-todo,
 .js-duedate,
 .js-btn,
-.js-red-btn {
+.js-red-btn,
+.js-check {
     border: none;
-    padding: 10px;
+    padding: 10px 20px;
     border-radius: 8px;
     box-shadow: 1px 1px 10px black;
+}
+
+
+.checked {
+    text-decoration: line-through;
 }
 
 .js-btn {
