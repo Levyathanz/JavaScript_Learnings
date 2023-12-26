@@ -80,10 +80,7 @@
           updateCalculation('.');
         ">.</button>
 
-      <button class="black-button" onclick="
-          calculation = eval(calculation);
-          display();
-          localStorage.setItem('calculation', calculation);
+      <button class="black-button" onclick=" calculator();
         ">=</button>
 
       <button class="orange-button" onclick="
@@ -95,6 +92,9 @@
       <button class="orange-button clear-button" onclick="
           Clear();
         ">Clear</button>
+      <button class="black-button clear-button" onclick="
+      deletebtn();
+    ">Delete</button>
     </p>
   </div>
 </body>
