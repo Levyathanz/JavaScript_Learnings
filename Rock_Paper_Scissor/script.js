@@ -126,8 +126,6 @@ function reset() {
         localStorage.removeItem('score')
         document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
 
-        document.querySelector('.js-reset-alert').innerHTML = ''
-
     })
     document.querySelector('.js-rst-no').addEventListener('click', () => {
         document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
