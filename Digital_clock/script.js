@@ -1,8 +1,32 @@
+
+// Declaring variables.
 const clock = document.querySelector('.clock');
+const stopwatch = document.querySelector('.stopwatch');
+const digitalclock = document.querySelector(".digitalclock")
+clock.addEventListener("load", interval);
+stopwatch.addEventListener("click", timer);
+digitalclock.addEventListener("click", interval);
 
-clock.addEventListener("load", getTime)
+let IntervalElement;
+let timerInterval;
+let hour = 0;
+let minute = 0;
+let second = 0;
+let count = 0;
+interval();
 
+// Digital clock Function 
+function interval() {
+    digitalclock.disabled = true;
+    IntervalElement = setInterval(getTime, 1000);
+    getTime();
+}
+
+// Function to get Time in Digital clock.
 function getTime() {
+    digitalclock.classList.add("js-selected");
+    stopwatch.classList.remove("js-selected");
+    stopwatch.classList.add("js-select");
     let time = new Date();
     let hour = time.getHours();
     let minute = time.getMinutes();
@@ -34,6 +58,105 @@ function getTime() {
     } else {
         AM.add('js-midday-light');
     }
+
 }
 
-setInterval(getTime, 1000);
+// Function for stop watch.
+function timer() {
+    clearInterval(IntervalElement);
+    digitalclock.disabled = false;
+    clock.innerHTML = `<div class="js-stopwatch" ><span>00:00:00:00</span>
+    </div>
+    <div class="js-stopwatch-element" >
+    <button class="js-stopwatch-btn" id="start" >START</button>
+    <button class="js-stopwatch-btn" id="stop">STOP</button>
+    <button class="js-stopwatch-btn" id="reset">RESET</button></div>`
+
+    const start = document.getElementById("start");
+    const stop = document.getElementById("stop");
+    const reset = document.getElementById("reset");
+
+    start.addEventListener('click', () => {
+        start.disabled = true;
+        stop.disabled = false;
+        timer = true;
+        timerInterval = setInterval(startcount, 10);
+        start.classList.add("js-clicked");
+        stop.classList.remove("js-clicked");
+    })
+    stop.addEventListener('click', function () {
+        stop.disabled = true;
+        start.disabled = false;
+        timer = false;
+        clearInterval(timerInterval);
+        start.classList.remove("js-clicked");
+        stop.classList.add("js-clicked");
+    });
+
+    reset.addEventListener('click', function () {
+        clearInterval(timerInterval);
+        start.disabled = false;
+        stop.disabled = false;
+        hour = 0;
+        minute = 0;
+        second = 0;
+        count = 0;
+        timer = false;
+        format();
+        start.classList.remove("js-clicked");
+        stop.classList.remove("js-clicked");
+    });
+    digitalclock.classList.remove("js-selected");
+    digitalclock.classList.add("js-select");
+    stopwatch.classList.add("js-selected");
+}
+
+// Function to start Timer.
+function startcount() {
+    if (timer) {
+        count++;
+
+        if (count == 100) {
+            second++;
+            count = 0;
+        }
+
+        if (second == 60) {
+            minute++;
+            second = 0;
+        }
+
+        if (minute == 60) {
+            hour++;
+            minute = 0;
+            second = 0;
+        }
+        format();
+    }
+}
+
+// Function that formats the stopwatch timer digits.
+function format() {
+    let hrString = hour;
+    let minString = minute;
+    let secString = second;
+    let countString = count;
+
+    if (hour < 10) {
+        hrString = "0" + hrString;
+    }
+
+    if (minute < 10) {
+        minString = "0" + minString;
+    }
+
+    if (second < 10) {
+        secString = "0" + secString;
+    }
+
+    if (count < 10) {
+        countString = "0" + countString;
+    }
+
+    document.querySelector(".js-stopwatch").innerHTML = `${hrString}:${minString}:${secString}:${countString}`;
+}

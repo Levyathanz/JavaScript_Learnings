@@ -19,6 +19,24 @@ body {
     align-items: center;
 }
 
+header {
+    display: flex;
+    gap: 10px;
+    font-size: 20px;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.digitalclock,
+.stopwatch {
+    background: none;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
 .clock {
     margin-top: 20px;
     color: #fff;
@@ -40,4 +58,38 @@ body {
 
 .js-midday-light {
     color: #fff;
+}
+
+.js-select {
+    color: #ffffff69;
+    padding-left: 30px;
+    font-size: 25px;
+}
+
+.js-selected {
+    color: #fff;
+    padding: 30px;
+    font-size: 34px;
+    text-decoration: underline;
+}
+
+.js-stopwatch-btn {
+    width: 100px;
+    height: 40px;
+    color: #000;
+    font-weight: bold;
+    background-color: #ffffffce;
+    border: none;
+    border-radius: 40px;
+    box-shadow: 1px 1px 10px #ffffff8c;
+    cursor: pointer;
+}
+
+.js-stopwatch-element {
+    margin-top: 30px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.js-clicked {
+    background-color: #ffffff77;
 }
