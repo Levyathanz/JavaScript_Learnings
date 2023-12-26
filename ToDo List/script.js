@@ -31,7 +31,6 @@ function Listupdate() {
         </div>
         <button class="js-red-btn js-delete-btn">Delete</button>`;
         List += list;
-        console.log(list)
     });
     document.querySelector('.js-list').innerHTML = List;
 
