@@ -13,6 +13,10 @@ let hour = 0;
 let minute = 0;
 let second = 0;
 let count = 0;
+let hrString = "00";
+let minString = "00";
+let secString = "00";
+let countString = "00";
 interval();
 
 // Digital clock Function 
@@ -65,7 +69,7 @@ function getTime() {
 function timer() {
     clearInterval(IntervalElement);
     digitalclock.disabled = false;
-    clock.innerHTML = `<div class="js-stopwatch" ><span>00:00:00:00</span>
+    clock.innerHTML = `<div class="js-stopwatch" ><span>${hrString}:${minString}:${secString}:${countString}</span>
     </div>
     <div class="js-stopwatch-element" >
     <button class="js-stopwatch-btn" id="start" >START</button>
@@ -137,10 +141,10 @@ function startcount() {
 
 // Function that formats the stopwatch timer digits.
 function format() {
-    let hrString = hour;
-    let minString = minute;
-    let secString = second;
-    let countString = count;
+    hrString = hour;
+    minString = minute;
+    secString = second;
+    countString = count;
 
     if (hour < 10) {
         hrString = "0" + hrString;
