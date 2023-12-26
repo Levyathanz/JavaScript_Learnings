@@ -17,13 +17,24 @@ function Listupdate() {
     todoList.forEach((todoobject, index) => {
         const { name, duedate, checked } = todoobject;
         const list = `
-        <div><input class="js-check " type="checkbox" ${checked ? 'checked' : ''} data-index="${index}"/></div>
-        <div class="task-js ${checked ? 'checked' : ''}">${name}</div>
-        <div class="task-js ${checked ? 'checked' : ''}">${duedate}</div>
+        <div>
+        <input class="js-check " type="checkbox" 
+        ${checked ? 'checked' : ''} data-index="${index}"/>
+        </div>
+        <div class="task-js 
+        ${checked ? 'checked' : ''}
+        ">${name}
+        </div>
+        <div class="task-js 
+        ${checked ? 'checked' : ''}
+        ">${duedate}
+        </div>
         <button class="js-red-btn js-delete-btn">Delete</button>`;
         List += list;
+        console.log(list)
     });
     document.querySelector('.js-list').innerHTML = List;
+
 
     document.querySelectorAll('.js-delete-btn').forEach((deleteButton, index) => {
         deleteButton.addEventListener('click', () => {
