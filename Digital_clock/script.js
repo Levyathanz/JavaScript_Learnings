@@ -1,14 +1,14 @@
-
 // Declaring variables.
 const clock = document.querySelector('.clock');
 const stopwatch = document.querySelector('.stopwatch');
 const digitalclock = document.querySelector(".digitalclock")
-clock.addEventListener("load", interval);
+clock.addEventListener("load", clockinterval);
 stopwatch.addEventListener("click", timer);
-digitalclock.addEventListener("click", interval);
+digitalclock.addEventListener("click", clockinterval);
 
 let IntervalElement;
 let timerInterval;
+let timercount;
 let hour = 0;
 let minute = 0;
 let second = 0;
@@ -17,11 +17,13 @@ let hrString = "00";
 let minString = "00";
 let secString = "00";
 let countString = "00";
-interval();
+clockinterval();
 
 // Digital clock Function 
-function interval() {
+function clockinterval() {
     digitalclock.disabled = true;
+    timercount = false;
+    clearInterval(timerInterval);
     IntervalElement = setInterval(getTime, 1000);
     getTime();
 }
@@ -80,10 +82,13 @@ function timer() {
     const stop = document.getElementById("stop");
     const reset = document.getElementById("reset");
 
+    stop.disabled = true;
+    stop.classList.add("js-clicked");
+
     start.addEventListener('click', () => {
         start.disabled = true;
         stop.disabled = false;
-        timer = true;
+        timercount = true;
         timerInterval = setInterval(startcount, 10);
         start.classList.add("js-clicked");
         stop.classList.remove("js-clicked");
@@ -91,7 +96,7 @@ function timer() {
     stop.addEventListener('click', function () {
         stop.disabled = true;
         start.disabled = false;
-        timer = false;
+        timercount = false;
         clearInterval(timerInterval);
         start.classList.remove("js-clicked");
         stop.classList.add("js-clicked");
@@ -105,7 +110,7 @@ function timer() {
         minute = 0;
         second = 0;
         count = 0;
-        timer = false;
+        timercount = false;
         format();
         start.classList.remove("js-clicked");
         stop.classList.remove("js-clicked");
@@ -117,7 +122,7 @@ function timer() {
 
 // Function to start Timer.
 function startcount() {
-    if (timer) {
+    if (timercount) {
         count++;
 
         if (count == 100) {

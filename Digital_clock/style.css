@@ -47,6 +47,7 @@ header {
     justify-content: center;
     align-items: center;
     text-shadow: 1px 1px 10px #ffffff8c;
+    cursor: default;
 }
 
 .js-midday {
