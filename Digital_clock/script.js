@@ -113,7 +113,7 @@ function timer() {
         timercount = false;
         format();
         start.classList.remove("js-clicked");
-        stop.classList.remove("js-clicked");
+        stop.classList.add("js-clicked");
     });
     digitalclock.classList.remove("js-selected");
     digitalclock.classList.add("js-select");
