@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Finger+Paint&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #292F33;
+}
+
+:root {
+    --sand: #d9ad7c;
+    --winning-blocks: #2d414b;
+}
+
+body {
+    color: var(--sand);
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+h1 {
+    font-size: 50px;
+    text-transform: uppercase;
+    text-decoration: double underline;
+}
+
+h3 {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: #86af49;
+    text-shadow: 1px 1px 10px black;
+}
+
+.container {
+    padding: 40px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.js-gamebox {
+    margin: 40px 0px;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.box {
+    height: 100px;
+    width: 100px;
+    color: var(--sand);
+    font-size: 70px;
+    font-family: 'Finger Paint', cursive;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    cursor: pointer;
+}
+
+.box:nth-child(3n) {
+    border-right: none;
+}
+
+.box:nth-child(6)~.box {
+    border-bottom: none;
+}
+
+#js-restart {
+    padding: 10px;
+    font-family: 'Finger Paint', cursive;
+    background-color: var(--sand);
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
