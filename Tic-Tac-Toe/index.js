@@ -3,6 +3,11 @@ let boxes = Array.from(document.getElementsByClassName("box"));
 let playagain = document.getElementById("js-restart");
 let result = document.getElementById("js-result");
 
+// Retrieve the computed style of the document body
+// Get the value of the CSS custom property named '--winning-blocks'
+// Assign the retrieved value to the variable WinningBox
+let WinningBox = getComputedStyle(document.body).getPropertyValue('--winning-blocks');
+
 const text_O = 'O';
 const text_X = 'X';
 const winningCombos = [
@@ -20,12 +25,12 @@ let currentPlayer = text_X;
 let spaces = Array(9).fill(null);
 
 
-// Arrow Function to start Game.
-const startGame = () => {
-    boxes.forEach(box => box.addEventListener("click", boxclicked));
-}
+// Adding EventListeners to the declared variables.
+boxes.forEach(box => box.addEventListener("click", boxclicked));
+playagain.addEventListener('click', restart);
 
-// Box Click Function.
+// Function "boxclicked".
+// Assign Player move and fill ' X/O 'in the box text.
 function boxclicked(box) {
     const id = box.target.id;
 
@@ -33,38 +38,49 @@ function boxclicked(box) {
         spaces[id] = currentPlayer;
         box.target.innerText = currentPlayer;
 
+        let WinningBlocks = playerWon();
+
         if (playerWon()) {
+            WinningBlocks.map(box => boxes[box].style.backgroundColor = WinningBox);
+            // WinningBlocks.map(box => boxes[box].classList.add('cross-over'));
+        }
+
+        currentPlayer = currentPlayer == text_X ? text_O : text_X;
+
+    }
+}
+
+// Function PlayerWon.
+// Returns blocks that matches and return result.
+
+function playerWon() {
+    for (const combo of winningCombos) {
+        let [a, b, c] = combo;
+
+        if (spaces[a] && (spaces[a] == spaces[b]) && (spaces[a] == spaces[c])) {
             result.innerHTML = `
             <audio src="Tones/Win.mp3" autoplay></audio>
             <h3>Player " ${currentPlayer} " has Won!</h3>`;
             boxes.forEach(box => box.removeEventListener("click", boxclicked));
-        }
-
-        currentPlayer = currentPlayer == text_X ? text_O : text_X;
-    }
-}
-
-// Function that show Result.
-
-function playerWon() {
-    for (const combos of winningCombos) {
-        let [a, b, c] = combos;
-
-        if (spaces[a] && (spaces[a] == spaces[b]) && (spaces[a] == spaces[c])) {
             return [a, b, c];
+        } else if (spaces.every(box => box !== null)) {
+            result.innerHTML = ` <span>Click to restart the game!</span>
+            <audio src="Tones/Tie.mp3" autoplay></audio>`;
+
         }
     }
     return false;
 }
 
-playagain.addEventListener('click', restart);
-
-// Function to Reset Game.
+// Function restart.
+// playagain button function that restart the game by changing box text,style and result.
 function restart() {
     spaces.fill(null);
 
     boxes.forEach(box => {
         box.innerText = ``;
+        box.style.backgroundColor = ``;
+        // box.classList.remove('cross-over');
     })
 
     boxes.forEach(box => box.addEventListener("click", boxclicked));
@@ -73,5 +89,3 @@ function restart() {
 
     currentPlayer = text_X;
 }
-
-startGame();

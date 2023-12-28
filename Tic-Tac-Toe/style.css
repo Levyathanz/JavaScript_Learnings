@@ -9,7 +9,7 @@
 
 :root {
     --sand: #d9ad7c;
-    --winning-blocks: #2d414b;
+    --winning-blocks: #55af499c;
 }
 
 body {
@@ -76,3 +76,7 @@ h3 {
     border-radius: 10px;
     cursor: pointer;
 }
+
+/* .cross-over {
+    text-decoration: line-through;
+} */
