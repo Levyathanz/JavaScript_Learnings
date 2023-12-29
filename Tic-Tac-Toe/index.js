@@ -60,11 +60,11 @@ function playerWon() {
         if (spaces[a] && (spaces[a] == spaces[b]) && (spaces[a] == spaces[c])) {
             result.innerHTML = `
             <audio src="Tones/Win.mp3" autoplay></audio>
-            <h3>Player " ${currentPlayer} " has Won!</h3>`;
+            <span class="js-alert-green" >Player " ${currentPlayer} " has Won!</span>`;
             boxes.forEach(box => box.removeEventListener("click", boxclicked));
             return [a, b, c];
         } else if (spaces.every(box => box !== null)) {
-            result.innerHTML = ` <span>Click to restart the game!</span>
+            result.innerHTML = ` <span class="js-alert-red" >Click to restart the game!</span>
             <audio src="Tones/Tie.mp3" autoplay></audio>`;
 
         }

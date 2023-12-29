@@ -23,11 +23,16 @@ h1 {
     text-decoration: double underline;
 }
 
-h3 {
+.js-alert-green,
+.js-alert-red {
     font-size: 30px;
     margin-bottom: 30px;
     color: #86af49;
     text-shadow: 1px 1px 10px black;
+}
+
+.js-alert-red {
+    color: #c94c4c;
 }
 
 .container {
@@ -68,6 +73,7 @@ h3 {
 }
 
 #js-restart {
+    margin-top: 30px;
     padding: 10px;
     font-family: 'Finger Paint', cursive;
     background-color: var(--sand);
