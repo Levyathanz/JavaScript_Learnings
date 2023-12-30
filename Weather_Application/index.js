@@ -1,5 +1,5 @@
 // Declaring Variables from HTML document.
-const Apikey = "ee46f080eb4a7f83bf9d0ecbd17c9951";
+const Apikey = ""; //Enter Your API key from the openweather.
 const city = document.getElementById('js-input')
 const searchButton = document.getElementById('js-search-btn');
 const icon = document.getElementById('js-icon');
