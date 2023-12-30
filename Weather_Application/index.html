@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Weather Today</h1>
+    </header>
+    <div>
+        <video autoplay muted loop id="bg-video">
+            <source src="Images/bg.mp4" type="video/mp4">
+        </video>
+    </div>
+    <main class="container">
+        <div class="search">
+            <input type="text" class="search-bar" id="js-input" placeholder="Enter the Location" spellcheck="false" />
+            <button class="search-btn" id="js-search-btn">
+                <ion-icon name="search-sharp"></ion-icon>
+            </button>
+        </div>
+        <div class="js-weather">
+            <div class="weather-update">
+                <div id="js-icon">
+                    <!-- <img src="http://openweathermap.org/img/wn/03n.png" id="icon" alt="Weather_Icon" /> -->
+                </div>
+                <h1 id="temperature"></h1>
+                <h3 id="description"></h3>
+                <p id="location"></p>
+            </div>
+            <div class="other-updates">
+                <p id="FeelsLike"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </div>
+    </main>
+</body>
+<script src="index.js"></script>
+
+</html>
