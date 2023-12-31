@@ -3,7 +3,7 @@
 ### Continuous Learning of Web Development.<br>
 <p> Some of the projects builded over this learning path are,</p>
 <ul>
-<li><strong>Basic Calculator</strong></li>
+<li><strong>Basic Calculator</strong></li><br>
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png"/>
 <li><strong>DigitalClock and StopWatch</strong></li><br>
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Digital_clock/screenshot/image.png"/>
