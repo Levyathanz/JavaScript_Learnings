@@ -1,5 +1,5 @@
 // Declaring Variables from HTML document.
-const Apikey = "";  // Enter your API key from openweather.
+const Apikey = "ee46f080eb4a7f83bf9d0ecbd17c9951";  // Enter your API key from openweather.
 const city = document.getElementById('js-input')
 const searchButton = document.getElementById('js-search-btn');
 const icon = document.getElementById('js-icon');
@@ -11,8 +11,9 @@ const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
 const weather = document.querySelector('.js-weather');
 let response;
+let error_content;
 
-// Adding keyboard Event.
+// Adding keyboard Event to Function Call.
 document.body.addEventListener('keydown', (event) => {
     if (event.key == 'Enter') {
         weathercall();
@@ -24,16 +25,30 @@ searchButton.addEventListener('click', weathercall)
 
 // Function that calls Weather Updates.
 function weathercall() {
-    weather.classList.remove('js-weather');
-    const location = city.value;
-    getWeatherData(location);
+
+    if (city.value !== ``) {
+        weather.classList.remove('js-weather');
+        const location = city.value;
+        getWeatherData(location);
+    }
 }
 
-// Asynchronous Function to fetch data from Openweather.
+// Function to display errors.
+function ErrorDisplay() {
+    icon.innerHTML = ``;
+    temperature.innerText = ``;
+    description.innerHTML = `${error_content}`;
+    city_location.innerHTML = ``;
+
+    FeelsLike.innerHTML = ``;
+    humidity.innerHTML = ``;
+    wind_speed.innerHTML = ``;
+}
+
+// Asynchronous Function to fetch data from Openweather with error Handling.
 async function getWeatherData(location) {
     try {
         response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${Apikey}&units=metric`);
-
 
         const data = await response.json();
 
@@ -65,24 +80,12 @@ async function getWeatherData(location) {
         city.value = '';
     } catch (error) {
         if (response.status == 401) {
-            icon.innerHTML = ``;
-            temperature.innerText = ``;
-            description.innerHTML = `<div id="js-server-error"><p id="statuscode">${response.status}!</p><br><p id="error-message">Server couldn't reached!</p></div>`;
-            city_location.innerHTML = ``;
-
-            FeelsLike.innerHTML = ``;
-            humidity.innerHTML = ``;
-            wind_speed.innerHTML = ``;
+            error_content = `<div id="js-server-error"><p id="statuscode">${response.status}!</p><br><p id="error-message">Server couldn't be reached!</p></div>`;
+            ErrorDisplay();
             city.value = '';
         } else {
-            icon.innerHTML = ``;
-            temperature.innerText = ``;
-            description.innerHTML = `<p id="js-error">Please Check the spell and try again Later!</p>`;
-            city_location.innerHTML = ``;
-
-            FeelsLike.innerHTML = ``;
-            humidity.innerHTML = ``;
-            wind_speed.innerHTML = ``;
+            error_content = `<p id="js-error">Please Check the spell and try again Later!</p>`
+            ErrorDisplay();
             city.value = '';
         }
     }
