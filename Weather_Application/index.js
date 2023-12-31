@@ -1,5 +1,5 @@
 // Declaring Variables from HTML document.
-const Apikey = "ee46f080eb4a7f83bf9d0ecbd17c9951";
+const Apikey = "";  // Enter your API key from openweather.
 const city = document.getElementById('js-input')
 const searchButton = document.getElementById('js-search-btn');
 const icon = document.getElementById('js-icon');
@@ -10,6 +10,7 @@ const FeelsLike = document.getElementById('FeelsLike');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
 const weather = document.querySelector('.js-weather');
+let response;
 
 // Adding keyboard Event.
 document.body.addEventListener('keydown', (event) => {
@@ -31,11 +32,8 @@ function weathercall() {
 // Asynchronous Function to fetch data from Openweather.
 async function getWeatherData(location) {
     try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${Apikey}&units=metric`);
+        response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location}&appid=${Apikey}&units=metric`);
 
-        if (!response.ok) {
-            throw new Error('Server refused to connect')
-        }
 
         const data = await response.json();
 
@@ -66,14 +64,26 @@ async function getWeatherData(location) {
 
         city.value = '';
     } catch (error) {
-        icon.innerHTML = ``;
-        temperature.innerText = ``;
-        description.innerHTML = `<div ></div><p id="js-error">Please Check the spell and try again Later!</p>`;
-        city_location.innerHTML = ``;
+        if (response.status == 401) {
+            icon.innerHTML = ``;
+            temperature.innerText = ``;
+            description.innerHTML = `<div id="js-server-error"><p id="statuscode">${response.status}!</p><br><p id="error-message">Server couldn't reached!</p></div>`;
+            city_location.innerHTML = ``;
 
-        FeelsLike.innerHTML = ``;
-        humidity.innerHTML = ``;
-        wind_speed.innerHTML = ``;
-        city.value = '';
+            FeelsLike.innerHTML = ``;
+            humidity.innerHTML = ``;
+            wind_speed.innerHTML = ``;
+            city.value = '';
+        } else {
+            icon.innerHTML = ``;
+            temperature.innerText = ``;
+            description.innerHTML = `<p id="js-error">Please Check the spell and try again Later!</p>`;
+            city_location.innerHTML = ``;
+
+            FeelsLike.innerHTML = ``;
+            humidity.innerHTML = ``;
+            wind_speed.innerHTML = ``;
+            city.value = '';
+        }
     }
 };
