@@ -65,7 +65,7 @@ async function getWeatherData(location) {
         icon.innerHTML = `<img src="http://openweathermap.org/img/wn/${weather_icon}.png" id='icon' alt="Weather_Icon" />`;
         temperature.innerText = `${temp}°C`;
         description.innerText = `${data.weather[0].description}`;
-        city_location.innerHTML = `${data.name}`;
+        city_location.innerHTML = `<ion-icon name="location" id="location-icon"></ion-icon>${data.name}`;
 
         FeelsLike.innerHTML = `<div class="cols">
         <p id="FeelsLike">${feels_like}°C</p>
