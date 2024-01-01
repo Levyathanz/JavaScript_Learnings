@@ -1,8 +1,10 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background-image: url(Images/rainbow-vortex.svg);
-    background-size: cover;
     margin: 0;
+    background-image: url(Images/cornered-stairs.svg);
+    background-size: cover;
+    background-repeat: repeat;
+    backdrop-filter: blur(2px);
 }
 
 header {
