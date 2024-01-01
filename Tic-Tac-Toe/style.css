@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    background-color: #292F33;
 }
 
 :root {
@@ -15,6 +14,7 @@
 body {
     color: var(--sand);
     font-family: 'Josefin Sans', sans-serif;
+    background-image: url(Images/endless-constellation.svg);
 }
 
 h1 {
@@ -36,8 +36,10 @@ h1 {
 }
 
 .container {
+    position: fixed;
     padding: 40px;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;

@@ -17,6 +17,7 @@ let hrString = "00";
 let minString = "00";
 let secString = "00";
 let countString = "00";
+
 clockinterval();
 
 // Digital clock Function 
@@ -37,6 +38,10 @@ function getTime() {
     let hour = time.getHours();
     let minute = time.getMinutes();
     let seconds = time.getSeconds();
+    let year = time.getFullYear();
+    const month_name = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+    let month = month_name[time.getMonth()];
+    let date = time.getDate();
 
     midday = 0;
 
@@ -49,12 +54,16 @@ function getTime() {
     hour < 10 ? hour = '0' + hour : hour;
     minute < 10 ? minute = '0' + minute : minute;
     seconds < 10 ? seconds = '0' + seconds : seconds;
+    date < 10 ? date = '0' + date : date;
 
-    clock.innerHTML = `<div><span>${hour}:${minute}:${seconds}</span>
+    clock.innerHTML = `<div><span id="digital-clock">${hour}:${minute}:${seconds}
     <span class="js-midday">
-    <span class="js-midday-A">AM</span>
+    <span class="js-midday-A">AM</span><br>
     <span class="js-midday-P">PM</span>
     </span>
+    </span>
+    <br>
+    <span id="full-date">${date} ${month} ${year}</span>
     </div>`
 
     let AM = document.querySelector('.js-midday-A').classList;

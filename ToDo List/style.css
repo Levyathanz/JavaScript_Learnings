@@ -3,7 +3,8 @@ body {
     ;
     margin: 0;
     color: #fff;
-    background-color: darkslategrey;
+    background-image: url(Images/sun-tornado.svg);
+    background-size: cover;
 }
 
 header {
@@ -76,4 +77,11 @@ label {
 
 main {
     padding: 20px;
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    display: grid;
+    place-content: center;
 }

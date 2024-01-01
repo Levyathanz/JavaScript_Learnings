@@ -1,6 +1,7 @@
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background-color: rgb(19, 54, 54);
+    background-image: url(Images/rainbow-vortex.svg);
+    background-size: cover;
     margin: 0;
 }
 

@@ -10,12 +10,13 @@ const description = document.getElementById('description');
 const FeelsLike = document.getElementById('FeelsLike');
 const humidity = document.getElementById('humidity');
 const wind_speed = document.getElementById('wind-speed');
-const weather = document.querySelector('.js-weather');
+let weather = document.querySelector('.js-weather');
 let response;
-let error_content;
+let error_message_timer;
 
 // Adding keyboard Event to Function Call.
 document.body.addEventListener('keydown', (event) => {
+    clearInterval(error_message_timer);
     if (event.key == 'Enter') {
         weathercall();
     }
@@ -35,7 +36,7 @@ function weathercall() {
 }
 
 // Function to display errors.
-function ErrorDisplay() {
+function ErrorDisplay(error_content) {
     icon.innerHTML = ``;
     temperature.innerText = ``;
     description.innerHTML = `${error_content}`;
@@ -44,6 +45,10 @@ function ErrorDisplay() {
     FeelsLike.innerHTML = ``;
     humidity.innerHTML = ``;
     wind_speed.innerHTML = ``;
+    error_message_timer = setTimeout(() => {
+        description.innerHTML = ``;
+        weather.classList.add('js-weather');
+    }, 6000);
 }
 
 // Asynchronous Function to fetch data from Openweather with error Handling.
@@ -80,13 +85,18 @@ async function getWeatherData(location) {
 
         city.value = '';
     } catch (error) {
-        if (response.status == 401) {
-            error_content = `<div id="js-server-error"><p id="statuscode">${response.status}!</p><br><p id="error-message">Server couldn't be reached!</p></div>`;
-            ErrorDisplay();
+        if (!response) {
+            let error_content1 = `<p id="js-error">Check Your Internet Connection!</p>`
+            ErrorDisplay(error_content1);
             city.value = '';
-        } else {
-            error_content = `<p id="js-error">Please Check the spell and try again Later!</p>`
-            ErrorDisplay();
+        } else if (response.status == 401) {
+            let error_content2 = `<div id="js-server-error"><p id="error-message">Server couldn't be reached!</p></div>`;
+            ErrorDisplay(error_content2);
+            city.value = '';
+        } else if (response.status == 404) {
+            let error_content3 = `<div id="js-server-error"><p id="js-error">Please Check the Spell and Try Again!</p>
+            </div>`
+            ErrorDisplay(error_content3);
             city.value = '';
         }
     }

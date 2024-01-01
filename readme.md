@@ -1,7 +1,7 @@
 # JavaScript Learnings.
 
 ### Continuous Learning of Web Development.<br>
-<p> Some of the projects builded over this learning path are,</p>
+<p> Some of the beginner projects builded over this learning path are,</p>
 <br>
 
 ### Basic Calculator.
