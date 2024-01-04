@@ -14,7 +14,9 @@
 body {
     color: var(--sand);
     font-family: 'Josefin Sans', sans-serif;
-    background-image: url(Images/endless-constellation.svg);
+    background-image: url(Images/slanted-gradient.svg);
+    background-size: cover;
+    backdrop-filter: blur(3px);
 }
 
 h1 {
@@ -36,7 +38,7 @@ h1 {
 }
 
 .container {
-    position: fixed;
+    position: relative;
     padding: 40px;
     width: 100%;
     height: 100%;
