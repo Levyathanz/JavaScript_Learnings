@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strict Mode</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+
+    "use strict"
+    // This will not allow undeclared variables to use.
+
+    // x = 10;
+    const basket = {
+        name: "basket",
+        price: 9
+    }
+    // y = x + 10;
+    // console.log(y,basket) //---> Cause an Error.
+
+    let z = 10;
+    console.log(z)
+    // delete z //-->cause an error.
+
+    function stricttest() {
+        a = "Hello"
+        console.log(a)
+    }
+    // stricttest() //--> Cause an Error.
+    //delete stricttest;
+
+    //b = 10;
+    function stricttest2() {
+        //"use strict"
+        // This will not make any issue with variable "b".
+        c = 10; // Here comes the issue.
+        console.log(c)
+    }
+    //stricttest2()
+    // Object.defineProperty(basket, "x", { value: 0, writable: false });
+    // console.log(basket)
+    // basket.x = 1;
+    // console.log(basket)
+
+    // with (Math) { x = log(10) };
+    // console.log(x)
+
+
+</script>
+
+</html>
