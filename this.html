@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>keywords</title>
+</head>
+
+<body>
+
+    <!--5-->
+    <button onclick="this.style.backgroundColor='red'">Click Me</button>
+
+</body>
+<script>
+
+    // this.
+    const person = {
+        fname: "James",
+        lname: "Bond",
+        fullname() {
+            return this.fname + " " + this.lname;
+        },
+        place(city, country) {
+            return this.fname + " " + this.lname + "," + city + "," + country;
+        }
+    }
+
+    console.log(person.fullname())
+
+    /*
+    1)In an object method, this refers to the object.
+    2)Alone, this refers to the global object(window).
+    3)In a function, this refers to the global object(window).
+    4)In a function, in strict mode, this is undefined.
+    5)In an event, this refers to the element that received the event.
+    6)Methods like call(), apply(), and bind() can refer this to any object
+    */
+
+    //2
+    console.log(this)
+
+    //3
+    function check() {
+        return this
+    }
+
+    console.log(check())
+
+
+    //4
+    function check2() {
+        "use strict"
+        return this
+    }
+
+    console.log(check2())
+
+    //6
+    //call() - Using method of one object by another.
+    const person2 = {
+        fname: "John",
+        lname: "Wick"
+    }
+    console.log(person.fullname.call(person2));
+
+    console.log(person.place.call(person2, "coventry", "UK"));
+
+
+    // apply() - similar to call() but arguments are passed as an array.
+    console.log(person.fullname.apply(person2));
+    console.log(person.place.apply(person2, ["coventry", "UK"]));
+
+    // In JS array have no max() method instead we can use,
+    console.log(Math.max.apply(null, [1, 2, 3, 4, 5, 6])) // Here 1st argument doesn't Matter.
+
+    // bind() - similarly borrow method from another object.
+    let personName = person.fullname.bind(person2);
+    console.log(personName()) //This return as a function,so it has to be called. 
+
+
+</script>
+
+</html>
