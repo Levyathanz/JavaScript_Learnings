@@ -9,6 +9,7 @@
 }
 
 body {
+    background-color: rgb(9, 66, 66);
     background-image: url(Image&fonts/endless-constellation.svg);
     font-family: 'digital-7', sans-serif;
     padding: 50px 20px;
