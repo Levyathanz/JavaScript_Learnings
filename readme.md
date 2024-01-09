@@ -13,6 +13,10 @@
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Digital_clock/screenshot/image.png"/>
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Digital_clock/screenshot/image1.png"/><br>
 
+### Analog-Clock.
+
+<img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Analog-Clock/Screenshot/Image.png"/><br>
+
 ### Rock_Paper_Scissor
 
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Rock_Paper_Scissor/Screenshot/Image.png"/><br>
