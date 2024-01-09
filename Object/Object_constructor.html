@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+</head>
+
+<body>
+    <h1>Object Constructor Function</h1>
+</body>
+<script>
+
+    // Object Constructor Function.
+    function PersonInfo(name, age, nationality) {
+        this.name = name;
+        this.age = age;
+        this.nationality = nationality;
+    }
+
+    const Jonathan = new PersonInfo(`Jonathan`, 26, `American`);
+    console.log(Jonathan);
+
+    const Laila = new PersonInfo(`Laila`, 24, `Irish`)
+    console.log(Laila);
+
+    Laila.BirthPlace = `Italy`;// This property only applies to this object.
+
+    // To add new property to the Function, we cannot do as above.
+    // This must added to the constructor function.
+    function Info(fname, lname, age, nationality, birthplace) {
+        this.fname = fname;
+        this.lname = lname;
+        this.age = age;
+        this.nationality = nationality;
+        this.birthplace = birthplace;
+
+        // this.fullname = function () {
+        //     return this.fname + ` ` + this.lname;
+        // }
+
+        // Arrow Function.
+        this.fullname = () => {
+            return this.fname + ` ` + this.lname;
+        }
+    }
+
+    const celine = new Info(`Celine`, `George`, 23, `Italian`, `Italy`);
+
+    console.log(celine);
+    console.log(celine.fullname());
+
+    // Object Prototype Property.
+    // This allow to add new property to the existing object Constructor.
+
+    PersonInfo.prototype.language = `English`;
+    console.log(PersonInfo.prototype);
+    console.log(Jonathan);
+    console.log(Laila.language);
+
+    // Methods can also be added by prototype property.
+
+    PersonInfo.prototype.display = function () {
+        return `Hello ${this.name}!`;
+    }
+
+    console.log(Jonathan.display());
+
+</script>
+
+</html>
