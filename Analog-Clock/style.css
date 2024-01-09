@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Rajdhani', sans-serif;
+    min-height: 100vh;
+    background-color: #fff4f4;
+    background-image: url(Images/dalmatian-spots.svg);
+    backdrop-filter: blur(30px);
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.clock-title {
+    padding: 30px;
+    font-size: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px;
+}
+
+.clock-dial .clock {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 400px;
+    width: 400px;
+    background-color: #fffafa;
+    box-shadow: 0 15px 25px 4px #000;
+    border: 20px solid #000;
+    border-radius: 50%;
+    position: relative;
+}
+
+.clock label {
+    font-size: 30px;
+    font-weight: bold;
+    position: absolute;
+    transform: rotate(calc(var(--i)*(360deg /12)));
+    inset: 30px;
+    text-align: center;
+}
+
+.clock label span {
+    display: inline-block;
+    transform: rotate(calc(var(--i)*(-360deg /12)));
+    text-shadow: 1px 1px 4px #000;
+}
+
+.clock-dial .needles {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.needles::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: #ffffff;
+    border: 4px solid teal;
+    border-radius: 50%;
+    z-index: 100;
+}
+
+.needles .needle {
+    position: absolute;
+    border-radius: 50%;
+    bottom: 0;
+    transform-origin: bottom;
+}
+
+.needle.second {
+    height: 130px;
+    width: 4px;
+    background: rgb(11, 117, 117);
+}
+
+.needle.hour {
+    height: 100px;
+    width: 8px;
+    background: #000;
+}
+
+.needle.minute {
+    height: 120px;
+    width: 5px;
+    background: #000;
+}
