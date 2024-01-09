@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class</title>
+</head>
+
+<body>
+
+    <h1>JavaScript Classes</h1>
+
+</body>
+<script>
+
+    // Class is a template for javascript objects.
+    class Greet {
+        constructor() {
+
+            console.log(`Good Day Everyone!`)
+        }
+    }
+
+    const greet = new Greet();
+
+    // Class with arguments.
+
+    class Rectangle {
+        constructor(_width, _height) {
+            this.width = _width;
+            this.height = _height;
+        }
+    }
+
+    const rectangle1 = new Rectangle(3, 5);
+    console.log(rectangle1.width);
+    console.log(rectangle1.height);
+
+    // class with methods.
+
+    class Square {
+        constructor(_side) {
+            this.side = _side;
+        }
+
+        // Method
+        Area() {
+            return Math.pow(this.side, 2);
+        }
+
+        Color(_color) {
+            return `I am square of side length ${this.side} with ${_color} color.`
+        }
+    }
+
+    const square1 = new Square(6);
+    console.log(`Area of the Square is : ${square1.Area()} sqr.units`);
+    console.log(square1.Color(`Teal`));
+
+
+
+
+    // Getter and Setter.
+    class Circle {
+        constructor(_radius) {
+            this.radius = _radius;
+        }
+
+        get area() {
+
+            return (Math.PI) * (Math.pow(this.radius, 2));
+        }
+
+        set area(_area) {
+            this.radius = (Math.sqrt(_area / Math.PI));
+        }
+
+    }
+
+
+    const circle1 = new Circle(5);
+
+    console.log(`Area of the Circle is :`, Math.round(circle1.area), `sqr.units`);
+    circle1.area = 140;
+    console.log(`Radius of the circle is :`, circle1.radius);
+
+
+
+
+    // Inheritance.
+
+    class Person {
+        constructor(_name) {
+            this.name = _name;
+        }
+
+        description() {
+            return `I am ${this.name}`;
+        }
+    }
+
+    class Identity extends Person {
+        constructor(_name, _role) {
+            super(_name);
+            this.role = _role;
+        }
+
+        show() {
+            return this.description() + ` and I am ${this.role}.`;
+        }
+    }
+
+    const person1 = new Identity(`Tony`, `Scientist`);
+    const person2 = new Identity(`Steve`, `Soldier`);
+
+    console.log(person1.name);
+    console.log(person2.description());
+    console.log(person2.role);
+    console.log(person1.show());
+
+    const person3 = new Identity(`Bruce`, `Scientist`);   // Second arguments is left untaken.
+    console.log(person3.description());
+    console.log(person3.role);  // undefined --> Parent class can't access children properties.
+
+    const others = [
+        new Identity(`Thor Odinson`, `God`),
+        new Identity(`Natasha`, `Shield Agent`),
+        new Identity(`Clint`, `Shield Agent`)
+    ];
+
+    function AvengersAssemble(_others) {
+        for (let identity of _others) {
+            console.log(identity.show());
+        }
+    }
+
+    AvengersAssemble(others);
+
+
+
+
+
+    
+    // Polymorphism.
+
+    class Animal {
+        constructor(_name) {
+            this.name = _name;
+        }
+
+        sound() {
+            console.log(`Generic Sound`);
+        }
+    }
+
+    const Dog = new Animal(`Dog`);
+    Dog.sound();
+
+    class PetAnimal extends Animal {
+        constructor(_name) {
+            super(_name);
+        }
+
+        sound() {
+            // super.sound();
+            console.log(`Woof!Woof!`)
+        }
+    }
+
+    const cat = new PetAnimal(`Cat`);
+    cat.sound();  
+    
+    
+</script>
+
+</html>
