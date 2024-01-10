@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set</title>
+</head>
+
+<body>
+    <h1>JavaScript Set</h1>
+</body>
+<script>
+
+    // Set.
+    // Set is a collection of unique values.
+    // To create a set - new Set([arr]).
+    const numbers = new Set([1, 2, 8, 3, 6, 3, 4, 5, 6, 7, 8, 9]);
+    // This removes duplicates.
+    console.log(numbers);
+
+    // We can also create a set by,
+    const letters = new Set();
+    letters.add(`a`);
+    letters.add(`b`);
+    letters.add(`c`);
+    letters.add(`d`);
+    letters.add(`e`);
+
+    console.log(letters);
+
+
+    // add()
+    letters.add(`c`);
+    console.log(letters);
+
+    // delete()
+    numbers.delete(9);
+    console.log(numbers);
+
+    //has()
+    console.log(letters.has(`u`));
+    // return true if exist otherwise false.
+
+    // clear()
+    numbers.clear();
+    console.log(numbers);
+
+    //values()
+    console.log(letters.values());
+    //Returns an Iterator with all the values in a Set
+
+    //keys()
+    console.log(letters.keys());
+    // Same as values.
+
+    //entries()
+    console.log(letters.entries());
+    // return an Iterator with the [value,value] pairs from a Set.
+
+    // size
+    console.log(letters.size);
+    //return numbr of elements in a set.
+
+    //typeof & instanceof Set.
+    console.log(typeof letters); // object
+    console.log(letters instanceof Set); //return True.
+
+</script>
+
+</html>
