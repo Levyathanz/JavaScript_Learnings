@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <h1>JavaScript Map</h1>
+</body>
+<script>
+
+    // Map.
+    // To create a Map - new Map([arr]).
+    const Avengers = new Map([
+        [`Tony Stark`, `Iron Man`],
+        [`Steve Rogers`, `Captain America`],
+        [`Thor Odinson`, `God of Thunder`],
+        [`Bruce Banner`, `Hulk`],
+        [`Natasha Romanoff`, `Black Widow`],
+        [`Clinton Francis Barton`, `Hawkeye`]
+    ]);
+    console.log(Avengers);
+
+    // We can also create a Map by,
+    const DC = new Map();
+    DC.set(`Bruce Wayne`, `Batman`);
+    DC.set(`Clark Kent`, `Superman`);
+    DC.set(`Diana Prince`, `Wonder Women`);
+
+    console.log(DC);
+
+
+    // get()
+    // Return the value of a key in the Map.
+    console.log(DC.get(`Bruce Wayne`));
+
+    // delete()
+    // remove Map element.
+    DC.delete(`Diana Prince`);
+    console.log(DC);
+
+    //has()
+    console.log(Avengers.has(`Bruce Banner`));
+    // return true if exist otherwise false.
+
+    // clear()
+    DC.clear();
+    console.log(DC);
+
+    //values()
+    console.log(Avengers.values());
+    //Returns an Iterator with all the values in a Set
+
+    //keys()
+    console.log(Avengers.keys());
+    // Same as values.
+
+    //entries()
+    console.log(Avengers.entries());
+    // return an Iterator with the [value,value] pairs from a Set.
+
+    // size
+    console.log(Avengers.size);
+    //return numbr of elements in a set.
+
+    //typeof & instanceof Set.
+    console.log(typeof Avengers); // object
+    console.log(Avengers instanceof Map); //return True.
+
+    // Using an Object as a key is an important feature of Map.
+    const React = { name: `React` };
+    const Laravel = { name: `Laravel` };
+    const Flask = { name: `Flask` };
+
+    const ProgrammingLanguage = new Map();
+    ProgrammingLanguage.set(React, `UI Library`);
+    ProgrammingLanguage.set(Laravel, `ServerSideScripting`);
+    ProgrammingLanguage.set(Flask, `Web Development`);
+
+    console.log(ProgrammingLanguage);
+
+    console.log(ProgrammingLanguage.get(React));
+    console.log(ProgrammingLanguage.get(`React`)); //React is an Object not a String.
+    // Hence It throws Undefined.
+
+
+
+
+
+</script>
+
+</html>
