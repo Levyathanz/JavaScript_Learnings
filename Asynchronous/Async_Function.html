@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous</title>
+</head>
+
+<body>
+    <h1>Async JavaScript</h1>
+    <h3 id="clock"></h3>
+</body>
+<script>
+
+    // Async.
+    // Functions running in parallel with other functions are called asynchronous.
+
+    console.log(`Hello!`)
+
+    setTimeout(greet, 2000);
+
+    function greet() {
+        console.log(`Hola!`);// This runs parallely and result displayed after 2000 milliseconds.
+    }
+
+    console.log(`Salve!`);
+
+
+    // Another example of Async Function.
+
+    setInterval(clock, 1000);
+
+    function clock() {
+        let d = new Date();
+        document.getElementById("clock").innerHTML =
+            d.getHours() + ":" +
+            d.getMinutes() + ":" +
+            d.getSeconds();
+    }
+
+    // Asynchronous programming allows JavaScript programs to start long-running tasks, and continue running other tasks in paralell.
+
+</script>
+
+</html>
