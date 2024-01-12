@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+</head>
+
+<body>
+    <h1>Closure Function</h1>
+</body>
+<script>
+
+    // Closure Function.
+    //A closure is a function having access to the parent scope, even after the parent function has closed.
+
+    const add = (function () {
+        let counter = 0;
+        return function () { counter += 1; return counter }
+    })();
+    // This add becomes function.
+
+    add();
+    add();
+    console.log(add());//returns 3.
+
+    // Here the counter is protected by the scope of the anonymous function, and can only be changed using the add function.
+
+</script>
+
+</html>
