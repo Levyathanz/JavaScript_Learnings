@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async&Await</title>
+</head>
+
+<body>
+    <h1>JavaScript Async&Await</h1>
+    <p id="greet"></p><br>
+    <p id="quote"></p>
+</body>
+<script>
+
+    // Async Await.
+    //let name = `John`;
+    async function greeting() {
+        let promise = new Promise(function (resolve, reject) {
+            if (name) {
+                resolve(`Hello ${name}`);
+            } else {
+                reject(`Give your Name!`);
+            }
+        });
+        document.getElementById(`greet`).innerHTML = await promise;
+        // throw error
+    }
+
+    greeting();
+
+    // API fetch.
+    async function getquote() {
+        try {
+            fetch("https://type.fit/api/quotes")
+                .then(response => {
+                    return response.json();
+                })
+                .then(quote => {
+                    let num = Math.round(Math.random() * 11);
+                    document.getElementById(`quote`).innerHTML = `${quote[num].text}`;
+                });
+        } catch (error) {
+            console.error('Error fetching or parsing quotes:', error);
+        }
+    }
+
+    getquote();
+
+</script>
+
+</html>

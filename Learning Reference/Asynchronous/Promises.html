@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prommises</title>
+</head>
+
+<body>
+    <h1>JavaScript Promises</h1>
+    <label for="box">Enter Only less than 5 Digits or letter :</label>
+    <input type="" id="box"><button id="demo">Click</button>
+    <p id="promise-return"></p>
+    <label for="response">File Request Demo(Weather API)</label>
+    <p id="response"></p>
+</body>
+<script>
+
+    // Promises
+    const click = document.getElementById(`demo`);
+    const input = document.getElementById(`box`);
+    const result = document.getElementById(`promise-return`)
+
+    function check(result) {
+        document.getElementById(`promise-return`).innerHTML = ` ${result}`;
+    }
+
+    click.addEventListener('click', () => {
+        let promisecheck = new Promise(function (resolve, reject) {
+            let value = input.value;
+            console.log(value.length);
+            if (value.length <= 5) {
+                resolve(`You have Entered correctly`);
+            } else {
+                reject(`Check the Number of digits or letters`);
+            }
+        });
+        promisecheck.then(
+            function (value) {
+                check(value);
+            },
+            function (error) {
+                check(error);
+            }
+        );
+    });
+
+    // File request.
+
+    function Displayer(value) {
+        document.getElementById(`response`).innerHTML = value;
+    }
+    let myPromise = new Promise(function (myResolve, myReject) {
+        let req = new XMLHttpRequest();
+        req.open('GET', "https://api.openweathermap.org/data/2.5/weather?q=london&appid=${Apikey}&units=metric");
+        req.onload = function () {
+            if (req.status == 200) {
+                myResolve(req.response);
+            } else {
+                myReject("File not Found");
+            }
+        };
+        req.send();
+    });
+
+    myPromise.then(
+        function (value) { Displayer(value); },
+        function (error) { Displayer(error); }
+    );
+</script>
+
+</html>
