@@ -67,17 +67,25 @@ function playercall(playermove) {
 
     localStorage.setItem('score', JSON.stringify(score));   // Storing scores in the localstorage so that the score does not removed when we refresh the page.
 
-    document.querySelector('.result').innerHTML = `<p>
+    document.querySelector('.result').innerHTML = `<div class='score-board'>
+    <div>
+    <audio src="Images/Music/${result}.mp3" autoplay></audio>
+    <p>
     You choose 
     <img class="js-result-img" src="Images/${playermove}.png" />
     Computer move is 
-    <img class="js-result-img" src="Images/${computermove}.png" />
-    </p> 
-    <p>
-    Result : ${result}
-    <audio src="Images/Music/${result}.mp3" autoplay></audio>
+    <img class="js-result-img" src="Images/${computermove}.png" /></p>
+    <p class="match-result">${result}
     </p>
-    Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
+    </div>
+    <div class="game-score">
+    <ul>
+    <li>Wins - ${score.Wins}</li>
+    <li>Loses - ${score.Loses}</li>
+    <li>Ties - ${score.Ties}</li>
+    </ul>
+    </div>
+    </div>`;
 
 }
 // Auto play Function.
@@ -124,11 +132,23 @@ function reset() {
             Ties: 0
         }
         localStorage.removeItem('score')
-        document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`
+        document.querySelector('.result').innerHTML = `<div class="game-score">
+        <ul>
+        <li>Wins - ${score.Wins}</li>
+        <li>Loses - ${score.Loses}</li>
+        <li>Ties - ${score.Ties}</li>
+        </ul>
+        </div>`
 
     })
     document.querySelector('.js-rst-no').addEventListener('click', () => {
-        document.querySelector('.result').innerHTML = `Wins : ${score.Wins}, Loses : ${score.Loses}, Ties : ${score.Ties}`;
+        document.querySelector('.result').innerHTML = `<div class="game-score">
+        <ul>
+        <li>Wins - ${score.Wins}</li>
+        <li>Loses - ${score.Loses}</li>
+        <li>Ties - ${score.Ties}</li>
+        </ul>
+        </div>`;
     }
     )
 }

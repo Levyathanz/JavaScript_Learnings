@@ -1,5 +1,5 @@
 body {
-    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Josefin Sans', Arial;
     margin: 0;
     background-image: url(Images/cornered-stairs.svg);
     background-size: cover;
@@ -30,7 +30,8 @@ button {
 p {
     color: #fff;
     font-weight: bold;
-    line-height: 50px;
+    line-height: 40px;
+    text-align: center;
 }
 
 .js-image-card {
@@ -76,5 +77,31 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+}
+
+.score-board{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-shadow: 2px 2px 5px #000;
+    border-radius: 10px;
+}
+
+.match-result{
+    font-size :2.5rem;
+    margin-right: 6rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.game-score{
+    color: #fff;
+    border-radius: 30px;
+    margin: 3rem  0 0 0;
+}
+
+.game-score li{
+    list-style: none;
+    text-align: left;
 }
