@@ -56,7 +56,8 @@ header {
 
 
 .checked {
-    text-decoration: line-through;
+    text-decoration:brown double line-through;
+
 }
 
 .js-btn {

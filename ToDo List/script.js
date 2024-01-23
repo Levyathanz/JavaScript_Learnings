@@ -1,11 +1,8 @@
 // Adding EventListener.
-document.querySelector('.js-btn').addEventListener('click', () => addlist());
-
-document.body.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-        addlist()
-    }
-})
+document.querySelector('.js-btn').addEventListener('click', (event) => {
+    event.preventDefault();
+    addlist();
+});
 
 // To Do List in Dictionaries of Array. 
 const todoList = JSON.parse(localStorage.getItem('TodoList')) || [];
@@ -48,6 +45,7 @@ function Listupdate() {
         checkbox.addEventListener('change', (event) => {
             const index = event.target.dataset.index;
             todoList[index].checked = event.target.checked;
+            
             localStorage.setItem('TodoList', JSON.stringify(todoList));
             Listupdate();
         });
