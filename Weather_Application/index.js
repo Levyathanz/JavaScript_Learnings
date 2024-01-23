@@ -14,16 +14,13 @@ let response;
 let data;
 let error_message_timer;
 
-// Adding keyboard Event to Function Call.
-document.body.addEventListener('keydown', (event) => {
-    clearInterval(error_message_timer);
-    if (event.key == 'Enter') {
-        weathercall();
-    }
-})
 
-// Function call through Search Button.
-searchButton.addEventListener('click', weathercall)
+// EventListener for submit button.
+searchButton.addEventListener('click', (e)=>{
+    clearTimeout(error_message_timer);
+    e.preventDefault();
+    weathercall();
+});
 
 // Function that calls Weather Updates.
 function weathercall() {
@@ -73,6 +70,7 @@ async function getWeatherData(location) {
         }
 
     } catch (error) {
+        description.classList.remove('loader');
         if (!response) {
             let error_message = `Check Your Internet Connection!`
             ErrorDisplay(error_message);
