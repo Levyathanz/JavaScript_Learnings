@@ -1,52 +1,77 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
 body {
     font-family: 'Josefin Sans', sans-serif;
-    background-image: url(Images/scattered-forcefields.svg);
-    background-size: cover;
+    background-image: url(./Images/scattered-forcefields.svg);
 }
 
 h1 {
-    color: darkorange;
-    font-size: 35px;
-    text-shadow: 5px 5px 30px;
+    color: rgb(121, 13, 13);
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: left;
+    text-shadow: 5px 5px 30px ;
+    margin-bottom: 20px;
 }
 
 button {
+    margin: 10px;
     width: 50px;
     height: 50px;
     font-size: 25px;
-    margin-right: 10px;
     border: none;
-    border-radius: 60px;
+    border-radius: 10px;
 }
 
 input {
+    background-color: gray;
     border: none;
     border-radius: 10px;
-    padding: 20px;
+    margin-bottom: 20px;
+    padding: 30px;
     font-size: 18px;
     font-weight: bold;
 }
 
 .black-button {
-    background-color: rgba(0, 0, 0, 0.911);
-    color: darkorange;
+    background-color: rgb(68, 68, 68);
+    color:#fff;
+}
+
+.black-button:hover{
+    background-color: rgb(34, 34, 34);
 }
 
 .orange-button {
-    background-color: darkorange;
-    color: rgb(0, 0, 0);
+    background-color: rgb(121, 13, 13);
+    color:#fff;
+}
+
+.orange-button:hover{
+    background-color: rgb(83, 8, 8);
 }
 
 .clear-button {
     font-size: 13px;
     font-weight: bold;
+    width: 125px;
 }
 
-.calculator {
-    position: fixed;
-    width: 100%;
+.calculator{
+    height: 100vh;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
+}
+
+.calculator-box {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color:rgba(1, 13, 26, 0.897);
+    border-radius: 20px;
 }
