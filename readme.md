@@ -10,7 +10,7 @@ Some of the beginner projects built during this learning path include:
       <h3 align="center">Basic Calculator.</h3>
       <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png" alt="Calculator"/>
     </td>
-    <td>
+    <td  style="border: none;">
       <h3 align="center">Analog-Clock.</h3>
       <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Analog-Clock/Screenshot/Image.png" alt="Analog Clock"/>
     </td>
