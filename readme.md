@@ -2,7 +2,7 @@
 
 ## Continuous Learning of Web Development.
 
-Some of the beginner projects built during this learning path include:
+Some of the beginner projects built during this learning path includes,
 
 <table>
   <tr>
