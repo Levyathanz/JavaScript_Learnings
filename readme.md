@@ -4,13 +4,13 @@
 
 Some of the beginner projects built during this learning path include:
 
-<table style="padding: 10px; border-collapse: collapse;">
+<table style="padding: 20px; border-collapse: collapse;">
   <tr>
-    <td  style="border: none;">
+    <td>
       <h3 align="center">Basic Calculator.</h3>
       <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png" alt="Calculator"/>
     </td>
-    <td  style="border: none;">
+    <td>
       <h3 align="center">Analog-Clock.</h3>
       <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Analog-Clock/Screenshot/Image.png" alt="Analog Clock"/>
     </td>
