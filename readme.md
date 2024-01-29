@@ -6,15 +6,14 @@
 
 <table>
 <tr>
-
+<td>
 <h3 align="center">Basic Calculator.</h3>
-
-<img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png" width="50%"/><br>
-
+<img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png" width="50%"/><br
+</td>
+<td>
 <h3 align="center">Analog-Clock.</h3>
-
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Analog-Clock/Screenshot/Image.png" width="50%"/><br>
-
+</td>
 </tr>
 
 <h3 align="center">DigitalClock and StopWatch.</h3>
