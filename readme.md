@@ -2,9 +2,7 @@
 
 <h2> Continuous Learning of Web Development.</h2><br>
 <p> Some of the beginner projects builded over this learning path are,</p>
-<br>
-
-<table>
+<table border="none">
 <tr>
 <td>
 <h3 align="center">Basic Calculator.</h3>
@@ -18,11 +16,12 @@
 <br>
 
 <tr>
-<h3 align="center">DigitalClock and StopWatch.</h3>
 <td>
+<h3 align="center">DigitalClock</h3>
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Digital_clock/screenshot/image.png"/>
 </td>
 <td>
+  <h3 align="center">StopWatch.</h3>
 <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Digital_clock/screenshot/image1.png"/>
 </td>
 </tr>
