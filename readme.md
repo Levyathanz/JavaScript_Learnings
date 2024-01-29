@@ -4,7 +4,7 @@
 
 Some of the beginner projects built during this learning path include:
 
-<table style="padding: 10px; border-collapse: collapse;">
+<table style="padding: 10px; border:none;">
   <tr>
     <td>
       <h3 align="center">Basic Calculator.</h3>
