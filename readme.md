@@ -4,8 +4,8 @@
 
 Some of the beginner projects built during this learning path include:
 
-<table style="padding: 10px; border:none;">
-  <tr>
+<table style="padding: 10px; border-collapse: collapse;">
+  <tr style="border: none;">
     <td>
       <h3 align="center">Basic Calculator.</h3>
       <img src="https://github.com/Levyathanz/Javascript_Learnings/blob/master/Calculator/screenshots/Image.png" alt="Calculator"/>
