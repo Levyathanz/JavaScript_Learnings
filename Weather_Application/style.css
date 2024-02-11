@@ -118,6 +118,7 @@ header {
 }
 
 .other-updates {
+    font-size: 13px;
     margin: 40px 0px;
     display: flex;
     align-items: center;
@@ -125,7 +126,7 @@ header {
 }
 
 .cols {
-    padding: 0px 20px 0px 20px;
+    padding: 0px 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -140,7 +141,7 @@ header {
 #error {
     margin: 0px 20px;
     font-size: 20px;
-    color: #e43158;
+    color: #fff;
     text-shadow: 2px 2px 4px #000;
 }
 
@@ -224,5 +225,12 @@ header {
     }
 }
 
-
-/*f03355*/
+@media screen and (max-width:400px) {
+    .search-bar {
+        width: 180px;
+    }
+    #updates-icon {
+        width: 20px;
+        height: 30px;
+    }
+}
